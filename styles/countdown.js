@@ -9,7 +9,7 @@
       mm = String(today.getMonth() + 1).padStart(2, "0"),
 
       yyyy = today.getFullYear(),
-      dayMonth = "08/18/",
+      dayMonth = "08/28/",
       birthday = dayMonth + 2027;
   
   today = mm + "/" + dd + "/" + yyyy;
