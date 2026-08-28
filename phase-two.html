@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We're tying the knot! &mdash; Joey & Megan 2027</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://use.typekit.net/adp2pli.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css" type="text/css">
     
     <link href="styles/normalize.css" rel="stylesheet">
     <link href="styles/skeleton.css" rel="stylesheet">
@@ -21,65 +19,47 @@
     <script src="styles/countdown.js"></script>
   </head>
   <body>
-    <header id="main-nav" class>
-      <nav class="container">
-        <a href="index.html" class="nav-logo" tabindex="-1">
-          <img src="./assets/logos/JM_Monogram_Eggshell.svg" alt="Joey and Megan wedding monogram mark" loading="lazy">
-        </a>
-        <label for="mobile-menu" class="hamburger">&equiv;</label>
-        <input id="mobile-menu" type="checkbox">
-        <ul class="nav-links" id="nav-mobile">
-          <li>
-            <a href="#">
-              <span>Details</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>Travel</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>RSVP &nearr;</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.myregistry.com/giftlist/joeyandmegan2027" target="_blank">
-              <span>Registry &nearr;</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="nav-links" id="nav-desktop-left">
-          <li>
-            <a href="#">
-              <span>Details</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>Travel</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="nav-links" id="nav-desktop-right">
-          <li>
-            <a href="#">
-              <span>RSVP ↗</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.myregistry.com/giftlist/joeyandmegan2027" target="_blank">
-              <span>Registry ↗</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
     <main>
-      <section class="block hero bg-monet-bridge">
+      <header id="main-nav" class>
+        <div class="site-header">
+          <input id="site-menu" type="checkbox">
+          <label for="site-menu" class="site-header-btn"><i class="ph-light ph-list" style="font-size: var(--font-size-16);"></i><span class="site-header-btn-text"> Menu</span><span class="site-header-btn-exit"><i class="ph-light ph-x" style="font-size: var(--font-size-24);"></i></span></label>
+          <a href="index.html" class="nav-logo" tabindex="-1">
+            <img src="./assets/logos/JM_Monogram_Eggshell.svg" alt="Joey and Megan wedding monogram mark" loading="lazy">
+          </a>
+          <a href="#" class="site-header-btn">RSVP</a>
+          <div class="site-menu bg-olive">
+            <div class="left">
+              <nav class="site-menu-nav">
+                <ul>
+                  <li><a href="#" class="active">Home</a></li>
+                  <li><a href="#">Our Story</a></li>
+                  <li><a href="#">Details</a></li>
+                  <li><a href="#">Travel & Stay</a></li>
+                  <li><a href="#">RSVP <i class="ph-light ph-arrow-up-right"></i></a></li>
+                  <li><a href="https://www.myregistry.com/giftlist/joeyandmegan2027" target="_blank">Registry <i class="ph-light ph-arrow-up-right"></i></a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="right">
+              <img src="./assets/heritage-barn/hb_farmhouse.jpg" alt="Heritage Barn's Farm House lodging building, wtih an old-growth oak tree in the foreground.">
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="block hero bg-placeholder">
         <div class="container grid">
-          <img src="./assets/02_Hero_Splash.svg" alt="Joey Sweener and Megan Labosky are getting married on August 00, 2028." class="span-all lg-span-two-thirds">
+          <img src="./assets/02_Hero_Splash.svg" alt="Joey Sweener and Megan Labosky are getting married on August 28, 2027." class="span-all md-span-two-thirds lg-span-two-thirds">
+        </div>
+        <div class="scroll">
+          <div class="scroll-text">Scroll</div>
+          <div class="scroll-animation"></div>
+        </div>
+      </section>
+      <section class="block introduction bg-foam center">
+        <div class="container">
+          <h2>Please join us at <i>Heritage Barn in Hamilton, N.Y.</i> on <i>August 28th, 2027</i> as we celebrate a love story more than ten years in the making.</h2>
+          <p><a href="#">Our Story &rarr;</a></p>
         </div>
       </section>
       <section class="block hub">
@@ -102,7 +82,7 @@
               <h1 class="h1-xl-sans">RSVP</h1>
             </div>
             <div id="description">
-              <h3>August 28, 2027<br>5:00&ndash;Midnight</h3>
+              <h3>August 28, 2027<br>3:00&ndash;11:00 P.M.</h3>
             </div>
           </a>
           <a href="https://www.myregistry.com/giftlist/joeyandmegan2027" target="_blank" class="flex flex-col md-flex-row center reverse" role="button" tabindex="0">
@@ -113,44 +93,54 @@
               <h3>Courtesy of<br>MyRegistry</h3>
             </div>
           </a>
+          <img src="./assets/logos/JM_Label_Rings_Coffee.svg" id="hub-rings" alt="Small J+M label logomark, with an intertwined ring graphic in the center.">
         </div>
       </section>
-      <section class="block story bg-sage">
+      <section class="feature">
+        <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image at 4:3 aspect ratio.">
+      </section>
+      <section class="block gallery">
         <div class="container grid">
-          <hgroup class="span-all md-span-third">
-            <h2>Our Story</h2>
-          </hgroup>
-          <div class="span-all md-span-two-third">
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-            <img src="./assets/placeholder-landscape-4-3.jpg" alt="Engagement photo of Megan and Joey.">
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
-            <p><a href="#">Read our story &rarr;</a></p>
+          <img src="./assets/placeholder-landscape-4-3.jpg" class="span-all md-span-6" style="aspect-ratio: 4/5; object-fit: cover;">
+          <div class="span-all md-span-1 spacer"></div>
+          <div class="span-all md-span-5">
+            <h3>Our engagement photos are here, <i>and we love them.</i></h3>
+            <p>Partnering with our dear friend, Shane Johnson, we explored Cazenovia’s Lorenzo State Historic Site and the surrounding grounds in beautiful, autumnal October, and he snapped some film. We’re so pleased with his captures, and are happy to share them here.</p>
+            <p><a href="#">See the Gallery &rarr;</a></p>
           </div>
         </div>
       </section>
-      <section class="block countdown bg-monet-dinner">
+      <a class="pre-footer bg-olive" href="#">
         <div class="container">
-          <div id="countdown">
-            <ul>
-              <li><span id="days"></span>Days</li>
-              <li><span id="hours"></span>Hours</li>
-              <li><span id="minutes"></span>Minutes</li>
-              <li><span id="seconds"></span>Seconds</li>
-            </ul>
-          </div>
-          <div id="content" style="display: none;">
-            <h3>Thank you for celebrating our special day with us.<br>Check back soon for a gallery of wedding photos!</h3>
+          <span class="pre-footer-text"><i>Don't forget to</i> RSVP</span>
+          <div class="pre-footer-arrow">
+            <i class="ph-light ph-caret-right"></i>
+            <i class="ph-light ph-caret-right"></i>
           </div>
         </div>
-      </section>
+      </a>
     </main>
-    <footer class="block bg-coffee">
+    <footer class="block bg-emerald">
       <div class="container flex flex-col center">
+        <img src="./assets/logos/JM_Primary_Sage.svg" alt="Joey and Megan, Ten Years in The Making." id="footer-logo-primary">
         <p>WEBSITE MADE BY THE GROOM<br><i>(and approved by the bride!)</i><br><br>#JoeyAndMegan2027</p>
-        <img src="./assets/logos/JM_Monogram_Oval_Crema.svg" alt="Joey and Megan, Ten Years in The Making." id="footer-logo-oval">
-        <p class="disclaimer">The Artist's Garden in Argenteuil (A Corner of the Garden with Dahlias), Claude Monet, c. 1873; Interior, after Dinner, Claude Monet, c. 1868/1869; Courtesy National Gallery of Art, Washington.</p>
+        <p class="disclaimer">The Artist's Garden in Argenteuil (A Corner of the Garden with Dahlias), Claude Monet, c. 1873; Argenteuil, Claude Monet, c. 1872; Courtesy National Gallery of Art, Washington.</p>
       </div>
     </footer>
+    <section class="block countdown bg-monet-argenteuil">
+      <div class="container">
+        <div id="countdown">
+          <ul>
+            <li><span id="days"></span>Days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+          </ul>
+        </div>
+        <div id="content" style="display: none;">
+          <h3>Thank you for celebrating our special day with us.<br>Check back soon for a gallery of wedding photos.</h3>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

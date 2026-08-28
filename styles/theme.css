@@ -1,30 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --content-max-width: 900px;
 
     --color-eggshell: #eeeeee;
-    --color-mustard: #fac526;
+    --color-sunflower: #fac526;
     --color-vermilion: #e82356;
-    --color-foam: #e8d1a7;
+    --color-foam: #e5dccb;
     --color-crema: #994400;
     --color-coffee: #442211;
     --color-sage: #bddbdb;
+    --color-olive: #53765e;
     --color-emerald: #2f4842;
     --color-lavender: #ccbbdd;
+    --color-amethyst: #685696;
     --color-grape: #4d3663;
     --color-black: #111111;
 
-    --font-public-sans: "Public Sans", Helvetica, Arial, sans-serif;
+    --font-jost: "Jost", Helvetica, Arial, sans-serif;
     --font-larken: "Larken", Georgia, serif;
-    --font-inter: "Inter", system-ui, sans-serif;
+    --font-public-sans: "Public Sans", Helvetica, Arial, sans-serif;
     --font-size-12: calc(var(--base-value) * 0.75);
     --font-size-14: calc(var(--base-value) * 0.875);
     --font-size-16: var(--base-value);
+    --font-size-24: calc(var(--base-value) * 1.5);
     --font-size-32: calc(var(--base-value) * 2);
     --font-size-48: calc(var(--base-value) * 3);
+    --font-size-64: calc(var(--base-value) * 4);
     --font-size-80: calc(var(--base-value) * 5);
-    --font-size-128: calc(var(--base-value) * 8);
+    --font-size-144: calc(var(--base-value) * 9);
 
-    --font-xl-clamp: clamp(var(--font-size-80), 18vw, var(--font-size-128));
+    --font-pre-footer: clamp(var(--font-size-24), 3vw, var(--font-size-32));
+    --font-xl-clamp: clamp(var(--font-size-80), 18vw, var(--font-size-144));
 
     --line-height-80: 80%;
     --line-height-120: 120%;
@@ -39,7 +46,8 @@ html {
     font-size: var(--base-value);
 }
 body {
-    background-color: var(--color-eggshell);
+    background: top left / 66% repeat url(../assets/bg-texture-eggshell.jpg), var(--color-eggshell);
+    color: var(--color-coffee);
 }
 img {
     padding: var(--spacing-100) 0;
@@ -57,8 +65,8 @@ img {
     margin: 0;
 }
 .h1-xl-sans {
-    font-family: var(--font-public-sans);
-    font-weight: 200;
+    font-family: var(--font-jost);
+    font-weight: 300;
     letter-spacing: var(--letter-spacing-tighter);
     text-transform: uppercase;
 }
@@ -68,8 +76,8 @@ img {
     letter-spacing: var(--letter-spacing-tight);
 }
 h1 {
-    font-family: var(--font-public-sans);
-    font-weight: 300;
+    font-family: var(--font-jost);
+    font-weight: 400;
     font-size: var(--font-size-80);
     line-height: var(--line-height-120);
     letter-spacing: var(--letter-spacing-tighter);
@@ -77,9 +85,13 @@ h1 {
 h2 {
     font-family: var(--font-larken);
     font-weight: 300;
-    font-size: var(--font-size-48);
+    font-size: var(--font-size-32);
     line-height: var(--line-height-120);
     letter-spacing: var(--letter-spacing-tight);
+
+    @media ( min-width: 64rem ) /* Laptop 1024 */ {
+        font-size: var(--font-size-48);
+    }
 }
 h3 {
     font-family: var(--font-larken);
@@ -87,24 +99,28 @@ h3 {
     font-size: var(--font-size-32);
     line-height: var(--line-height-120);
     letter-spacing: var(--letter-spacing-tight);
+    margin-bottom: var(--spacing-200);
+}
+#description h3 {
+    margin-bottom: 0;
 }
 p {
     font-family: var(--font-public-sans);
     line-height: var(--line-height-160);
 }
 p + p {
-    padding-top: var(--base-value);
+    padding-top: var(--spacing-100);
 }
 p a, a {
-    font-family: var(--font-inter);
-    font-weight: 700;
+    font-family: var(--font-jost);
+    font-weight: 500;
     font-size: var(--font-size-14);
     line-height: var(--line-height-120);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     text-decoration: underline;
     text-underline-offset: 50%;
-    text-decoration-thickness: auto;
+    text-decoration-thickness: 1px;
     color: inherit;
     transition: 0.3s all;
 }
@@ -122,36 +138,39 @@ a:hover {
     background-color: var(--color-sage);
     color: var(--color-emerald);
  }
- .bg-sage a:hover {
-    color: var(--color-vermilion);
+ .bg-olive {
+    background-color: var(--color-olive);
+    color: var(--color-eggshell);
+ }
+ .bg-emerald {
+    background-color: var(--color-emerald);
+    color: var(--color-olive);
+ }
+
+ .bg-foam {
+    background-color: var(--color-foam);
+    color: var(--color-coffee);
+ }
+ .bg-crema {
+    background-color: var(--color-crema);
+    color: var(--color-eggshell);
  }
  .bg-coffee {
     background-color: var(--color-coffee);
     color: var(--color-crema);
  }
- .bg-coffee a:hover {
-    color: var(--color-mustard);
- }
+
  .bg-lavender {
     background-color: var(--color-lavender);
     color: var(--color-grape);
  }
- .bg-lavender a:hover {
-    color: var(--color-vermilion);
- }
- .bg-foam {
-    background-color: var(--color-foam);
-    color: var(--color-crema);
- }
- .bg-foam a:hover {
-    color: var(--color-vermilion);
- }
- .bg-black {
-    background-color: var(--color-black);
+ .bg-amethyst {
+    background-color: var(--color-amethyst);
     color: var(--color-eggshell);
  }
- .bg-black a:hover {
-    color: var(--color-mustard);
+ .bg-grape {
+    background-color: var(--color-grape);
+    color: var(--color-lavender);
  }
 /* 
  *
@@ -160,6 +179,10 @@ a:hover {
  *
  *
  */
+ .bg-placeholder {
+    background: linear-gradient(rgb(from var(--color-black) r g b / 0.2)), center / cover no-repeat url(../assets/placeholder-landscape-4-3.jpg);
+    color: var(--color-eggshell);
+ }
  .bg-monet-garden {
     background: linear-gradient(rgb(from var(--color-black) r g b / 0.20)), center / cover no-repeat url(../assets/paintings/the_artist_s_garden_in_argenteuil_a_corner_of_the_garden_with_dahlias_1991.27.1.jpg);
     color: var(--color-eggshell);
@@ -172,8 +195,8 @@ a:hover {
     background: linear-gradient(rgb(from var(--color-black) r g b / 0.33)), center / cover no-repeat url(../assets/paintings/the_bridge_at_argenteuil_1983.1.24.jpg);
     color: var(--color-eggshell);
  }
- .bg-monet-flowers {
-    background: linear-gradient(rgb(from var(--color-black) r g b / 0.20)), center / cover no-repeat url(../assets/paintings/jerusalem_artichoke_flowers_1963.10.181.jpg);
+ .bg-monet-argenteuil {
+    background: linear-gradient(rgb(from var(--color-black) r g b / 0.33)), center 80% / cover no-repeat url(../assets/paintings/argenteuil_1970.17.42.jpg);
     color: var(--color-eggshell);
  }
 /* 
@@ -183,7 +206,7 @@ a:hover {
  *
  *
  */
-.invite /* Phase 01 Save the Date hero graphic. */ {
+.invite /* Phase 01 Save the Date hero. */ {
     display: flex;
     position: relative;
     text-align: center;
@@ -200,16 +223,69 @@ a:hover {
  *
  *
  */
-.hero /* Phase 02 hero. Uses a custom class for a Monet painting background, until we have engagement photos to use instead. */ {
+.hero /* Phase 02 hero. Uses an additional custom class for a Monet painting background, until we have engagement photos to use instead. */ {
     display: flex;
+    flex-direction: column;
     position: relative;
     text-align: center;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
+    min-height: 100vh;
     width: 100%;
 }
-@media ( min-width: 64rem ) /* Laptop 1024 */ {
+.scroll {
+    font-family: var(--font-jost);
+    font-size: var(--font-size-14);
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.scroll-text {
+    margin-bottom: 1em;
+}
+.scroll-animation {
+    position: relative;
+    width: 1px;
+    background: rgb(from currentColor r g b / 0.33);
+    height: clamp(var(--font-size-32), 4vw, var(--font-size-64));
+}
+.scroll-animation:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: currentColor;
+    animation: scrollprompt 4s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+@keyframes scrollprompt {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    24% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+    25% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+    50% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+    100% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+}
+@media ( min-width: 48rem ) /* Tablet 768 */ {
     .hero img {
         grid-column-start: 3;
         padding-top: var(--spacing-400);
@@ -218,13 +294,14 @@ a:hover {
 .hub {
     text-align: center !important;
     padding: var(--spacing-400) 0;
+    color: var(--color-coffee);
 }
 .hub .container {
-    border-top: 2px solid var(--color-black);
+    border-top: 1px solid var(--color-coffee);
 }
 .hub a {
     text-decoration: none;
-    border-bottom: 2px solid var(--color-black);
+    border-bottom: 1px solid var(--color-coffee);
     margin: 0;
     padding: var(--spacing-300) 0;
     opacity: 0.30;
@@ -238,6 +315,7 @@ a:hover {
         font-family: var(--font-larken) !important;
         text-transform: none;
         font-style: italic;
+        transform: scale(0.95);
     }
 }
 @media (hover: none) {
@@ -250,6 +328,12 @@ a:hover {
         font-style: italic;
     }
 }
+.hub #hub-rings {
+    height: var(--font-pre-footer);
+    margin: var(--spacing-800) 0 var(--spacing-400);
+    padding: 0;
+    opacity: 0.5;
+}
 .hub #description {
     text-transform: none !important;
     display: none;
@@ -260,7 +344,7 @@ a:hover {
     }
     .hub a {
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: end;
         text-align: right;
     }
     .hub a.travel {
@@ -271,13 +355,36 @@ a:hover {
         text-align: left !important;
     }
 }
-.story {
-    text-align: left;
-    padding: var(--spacing-400) 0 !important;
+.introduction {
+    padding-top: var(--spacing-1000);
+    padding-bottom: var(--spacing-800);
 }
-.story .container {
-    border-top: 2px solid var(--color-emerald);
-    padding-top: var(--spacing-200);
+.introduction h2 {
+    margin-bottom: var(--spacing-400);
+}
+.feature {
+    aspect-ratio: 4/5;
+    @media ( min-width: 48rem ) /* Tablet 768 */ {
+        aspect-ratio: unset;
+    }
+}
+.feature img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.gallery {
+    padding-top: 0;
+    padding-bottom: var(--spacing-400);
+    @media ( min-width: 48rem ) /* Tablet 768 */ {
+        padding: var(--spacing-400) 0;
+    }
+}
+.gallery .grid {
+    align-items: center;
+}
+.gallery img {
+    padding-top: 0.25em;
 }
 /* 
  *
@@ -309,8 +416,8 @@ a:hover {
 }
 .countdown li span {
     display: block;
-    font-family: var(--font-public-sans);
-    font-weight: 300;
+    font-family: var(--font-jost);
+    font-weight: 400;
     font-size: var(--font-size-80);
     line-height: var(--line-height-120);
     letter-spacing: var(--letter-spacing-tighter);
@@ -325,7 +432,52 @@ a:hover {
         justify-content: space-between;
     }
 }
-
+.pre-footer {
+    display: block;
+    padding: var(--spacing-400) 0;
+    text-transform: unset !important;
+    font-family: var(--font-larken);
+    font-size: var(--font-pre-footer);
+    text-decoration: none !important;
+    letter-spacing: var(--letter-spacing-tight);
+    transition: all ease 0.4s;
+}
+.pre-footer > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.pre-footer .pre-footer-arrow {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--font-pre-footer) * 1.5);
+    height: calc(var(--font-pre-footer) * 1.5);
+    overflow: hidden;
+    border: 1px solid rgb(from currentColor r g b / 0.33);
+    border-radius: 50%;
+    margin-left: 3rem;
+}
+.pre-footer .pre-footer-arrow > i {
+    position: absolute;
+    font-size: calc(var(--font-pre-footer) * 0.66);
+    transition: all ease 0.4s;
+}
+.pre-footer .pre-footer-arrow > i:first-child {
+    transform: translateX(0);
+}
+.pre-footer:hover .pre-footer-arrow > i:first-child {
+    transform: translateX(calc(calc(var(--font-pre-footer) * 1.5) * 1));
+}
+.pre-footer .pre-footer-arrow > i:last-child {
+    transform: translateX(calc(calc(var(--font-pre-footer) * 1.5) * -1));
+}
+.pre-footer:hover .pre-footer-arrow > i:last-child {
+    transform: translateX(0);
+}
 footer {
     padding: var(--spacing-600) 0 var(--spacing-800) !important;
 }
@@ -333,14 +485,12 @@ footer .container {
     gap: var(--spacing-600);
 }
 footer #footer-logo-primary {
-    max-width: 300px;
+    max-height: 8rem;
 }
-footer #footer-logo-oval {
-    max-height: 200px;
+footer #footer-logo-secondary {
+    max-width: 6rem;
 }
 footer .disclaimer {
     font-size: var(--font-size-12);
-    color: var(--color-eggshell);
-    opacity: 0.5;
-    max-width: 55ch;
+    max-width: 60ch;
 }
