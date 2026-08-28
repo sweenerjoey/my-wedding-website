@@ -202,36 +202,23 @@ a:hover {
 /* 
  *
  *
- * Phase 01
+ * Page stylings
  *
  *
  */
-.invite /* Phase 01 Save the Date hero. */ {
-    display: flex;
-    position: relative;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
-    width: 100%;
-    color: var(--color-eggshell);
-}
-/* 
- *
- *
- * Phase 02
- *
- *
- */
-.hero /* Phase 02 hero. Uses an additional custom class for a Monet painting background, until we have engagement photos to use instead. */ {
+.hero /* Hero for all pages. Home hero overrides the height. All hero treatments require a second class that defines the background (bg-*). */ {
     display: flex;
     flex-direction: column;
     position: relative;
     text-align: center;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vmin;
     width: 100%;
+}
+.home-hero {
+    min-height: 100vh;
+    min-height: 100svh;
 }
 .scroll {
     font-family: var(--font-jost);
