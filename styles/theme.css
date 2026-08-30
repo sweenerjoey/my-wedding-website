@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --content-max-width: 900px;
+    --content-max-width: 990px;
 
     --color-eggshell: #eeeeee;
     --color-sunflower: #fac526;
@@ -16,6 +16,9 @@
     --color-amethyst: #685696;
     --color-grape: #4d3663;
     --color-black: #111111;
+    --color-black-overlay-20: rgb(from var(--color-black) r g b / 0.20);
+    --color-black-overlay-30: rgb(from var(--color-black) r g b / 0.30);
+    --color-black-overlay-50: rgb(from var(--color-black) r g b / 0.50);
 
     --font-jost: "Jost", Helvetica, Arial, sans-serif;
     --font-larken: "Larken", Georgia, serif;
@@ -175,30 +178,47 @@ a:hover {
 /* 
  *
  *
- * Background Monet Paintings
+ * Background Image Treatments
  *
  *
  */
- .bg-placeholder {
-    background: linear-gradient(rgb(from var(--color-black) r g b / 0.2)), center / cover no-repeat url(../assets/placeholder-landscape-4-3.jpg);
-    color: var(--color-eggshell);
- }
- .bg-monet-garden {
-    background: linear-gradient(rgb(from var(--color-black) r g b / 0.20)), center / cover no-repeat url(../assets/paintings/the_artist_s_garden_in_argenteuil_a_corner_of_the_garden_with_dahlias_1991.27.1.jpg);
-    color: var(--color-eggshell);
- }
  .bg-monet-dinner {
-    background: linear-gradient(rgb(from var(--color-black) r g b / 0.33)), center / cover no-repeat url(../assets/paintings/interior_after_dinner_1983.1.26.jpg);
-    color: var(--color-eggshell);
- }
- .bg-monet-bridge {
-    background: linear-gradient(rgb(from var(--color-black) r g b / 0.33)), center / cover no-repeat url(../assets/paintings/the_bridge_at_argenteuil_1983.1.24.jpg);
+    background: linear-gradient(rgb(from var(--color-black) r g b / 0.33)), center 25% / cover no-repeat url(../assets/paintings/interior_after_dinner_1983.1.26.jpg);
     color: var(--color-eggshell);
  }
  .bg-monet-argenteuil {
     background: linear-gradient(rgb(from var(--color-black) r g b / 0.33)), center 80% / cover no-repeat url(../assets/paintings/argenteuil_1970.17.42.jpg);
     color: var(--color-eggshell);
  }
+ .wallpaper { /* Theme-specific utility class "wallpaper" will contain any image or video to the container it's inside. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -50;
+    object-fit: cover;
+ }
+ img.wallpaper, video.wallpaper {
+    padding: 0 !important;
+ }
+ /* 
+  *
+  * Theme-specific utility classes "overlay-*" add a semi-transparent black screen. Apply to the container of a wallpaper. 
+  *
+  */
+.overlay-20 { 
+    background: var(--color-black-overlay-20);
+    color: var(--color-eggshell);
+}
+.overlay-30 { 
+    background: var(--color-black-overlay-30);
+    color: var(--color-eggshell);
+}
+.overlay-50 { 
+    background: var(--color-black-overlay-50);
+    color: var(--color-eggshell);
+}
 /* 
  *
  *
@@ -219,6 +239,11 @@ a:hover {
 .home-hero {
     min-height: 100vh;
     min-height: 100svh;
+}
+@media (min-width: 48rem) /* Tablet 768 */ {
+    .home-hero #splash {
+        --grid-column-start: 3;
+    }
 }
 .scroll {
     font-family: var(--font-jost);
@@ -270,12 +295,6 @@ a:hover {
     100% {
         transform: scaleY(0);
         transform-origin: top;
-    }
-}
-@media ( min-width: 48rem ) /* Tablet 768 */ {
-    .hero img {
-        grid-column-start: 3;
-        padding-top: var(--spacing-400);
     }
 }
 .hub {
@@ -355,7 +374,7 @@ a:hover {
         aspect-ratio: unset;
     }
 }
-.feature img {
+.feature img, .feature video {
     width: 100%;
     height: 100%;
     object-fit: cover;

@@ -47,7 +47,7 @@ header .site-header {
     transition: background-color ease 0.3s !important;
 }
 .site-header-btn:hover, .site-header-btn:active {
-    background-color: rgb(from var(--color-black) r g b / 0.05);
+    background-color: rgb(from var(--color-black) r g b / 0.08);
 }
 .site-header-btn-text {
     display: none;
@@ -165,13 +165,14 @@ header .site-header {
     font-size: var(--font-size-24);
     text-transform: uppercase;
     font-weight: 400;
+    letter-spacing: var(--letter-spacing-tighter);
     text-align: center;
     color: var(--color-eggshell);
 }
 .site-menu-nav li, .site-menu-nav a {
     font-size: unset;
     font-weight: unset;
-    padding-bottom: var(--spacing-300);
+    padding: var(--spacing-100) 0;
     text-decoration: none;
 }
 .active {
