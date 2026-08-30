@@ -201,6 +201,7 @@ a:hover {
  }
  img.wallpaper, video.wallpaper {
     padding: 0 !important;
+    user-select: none;
  }
  /* 
   *
