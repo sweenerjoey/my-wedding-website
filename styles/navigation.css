@@ -78,6 +78,7 @@ header .site-header {
 }
 .site-header label {
     z-index: 20;
+    cursor: pointer;
 }
 .nav-logo {
     pointer-events: all;
