@@ -2,6 +2,7 @@
 
 :root {
     --content-max-width: 990px;
+    --content-narrow-width: 66ch;
 
     --color-eggshell: #eeeeee;
     --color-sunflower: #fac526;
@@ -33,6 +34,7 @@
     --font-size-80: calc(var(--base-value) * 5);
     --font-size-144: calc(var(--base-value) * 9);
 
+    --font-h1-clamp: clamp(var(--font-size-48), 5.5vw, var(--font-size-80));
     --font-pre-footer: clamp(var(--font-size-24), 3vw, var(--font-size-32));
     --font-xl-clamp: clamp(var(--font-size-80), 18vw, var(--font-size-144));
 
@@ -52,8 +54,24 @@ body {
     background: top left / 66% repeat url(../assets/bg-texture-eggshell.jpg), var(--color-eggshell);
     color: var(--color-coffee);
 }
-img {
-    padding: var(--spacing-100) 0;
+.narrow /* Constrains a container or element to a smaller maximum size than the content-max-width. */ {
+    max-width: var(--content-narrow-width);
+}
+hr {
+    margin-top: var(--spacing-200);
+    margin-bottom: var(--spacing-200);
+    border: none;
+    border-top: 1px solid rgb(from currentColor r g b / 0.5);
+}
+.spacer {
+    border: none;
+    margin-top: var(--spacing-400);
+    
+    @media ( min-width: 48rem ) {
+        border: none;
+        border-top: 1px solid rgb(from currentColor r g b / 0.5);
+        margin-bottom: var(--spacing-400);
+    }
 }
 /* 
  *
@@ -79,9 +97,9 @@ img {
     letter-spacing: var(--letter-spacing-tight);
 }
 h1 {
-    font-family: var(--font-jost);
-    font-weight: 400;
-    font-size: var(--font-size-80);
+    font-family: var(--font-larken);
+    font-weight: 300;
+    font-size: var(--font-h1-clamp);
     line-height: var(--line-height-120);
     letter-spacing: var(--letter-spacing-tighter);
 }
@@ -125,7 +143,7 @@ p a, a {
     text-underline-offset: 50%;
     text-decoration-thickness: 1px;
     color: inherit;
-    transition: 0.3s all;
+    transition: 0.3s all ease;
 }
 a:hover {
     text-decoration-color: transparent;
@@ -137,6 +155,8 @@ a:hover {
  *
  *
  */
+
+/* Greens */
  .bg-sage {
     background-color: var(--color-sage);
     color: var(--color-emerald);
@@ -150,6 +170,7 @@ a:hover {
     color: var(--color-olive);
  }
 
+/* Browns */
  .bg-foam {
     background-color: var(--color-foam);
     color: var(--color-coffee);
@@ -163,6 +184,7 @@ a:hover {
     color: var(--color-crema);
  }
 
+/* Purples */
  .bg-lavender {
     background-color: var(--color-lavender);
     color: var(--color-grape);
@@ -173,12 +195,18 @@ a:hover {
  }
  .bg-grape {
     background-color: var(--color-grape);
-    color: var(--color-lavender);
+    color: var(--color-amethyst);
+ }
+
+ /* Neutrals */
+ .bg-white {
+    background-color: white;
+    color: var(--color-coffee);
  }
 /* 
  *
  *
- * Background Image Treatments
+ * Background Treatments
  *
  *
  */
@@ -203,11 +231,7 @@ a:hover {
     padding: 0 !important;
     user-select: none;
  }
- /* 
-  *
-  * Theme-specific utility classes "overlay-*" add a semi-transparent black screen. Apply to the container of a wallpaper. 
-  *
-  */
+ /* Theme-specific utility classes "overlay-*" add a semi-transparent black screen. Apply to the container of a wallpaper, video or image. */
 .overlay-20 { 
     background: var(--color-black-overlay-20);
     color: var(--color-eggshell);
@@ -220,31 +244,42 @@ a:hover {
     background: var(--color-black-overlay-50);
     color: var(--color-eggshell);
 }
+.overlay-gradient {
+    background: linear-gradient(to right top, rgb(from var(--color-black) r g b / 0.5), transparent 66%);
+}
 /* 
  *
  *
- * Page stylings
+ * Hero styles.
  *
  *
  */
-.hero /* Hero for all pages. Home hero overrides the height. All hero treatments require a second class that defines the background (bg-*). */ {
+.hero /* Applies base styling to all heroes on all pages. */ {
     display: flex;
     flex-direction: column;
     position: relative;
     text-align: center;
     justify-content: center;
     align-items: center;
-    height: 100vmin;
+    min-height: 100vmin;
     width: 100%;
 }
-.home-hero {
+.home-hero /* Apply in addition to 'hero' to override viewport height. */ {
     min-height: 100vh;
     min-height: 100svh;
 }
 @media (min-width: 48rem) /* Tablet 768 */ {
+    .hero {
+        min-height: unset;
+        height: 100vmin;
+    }
     .home-hero #splash {
         --grid-column-start: 3;
     }
+}
+.hero.text-only /* Apply 'text-only' class in addition to 'hero' to override spacing. */{
+    padding-top: var(--spacing-500);
+    padding-bottom: unset;
 }
 .scroll {
     font-family: var(--font-jost);
@@ -264,7 +299,7 @@ a:hover {
     position: relative;
     width: 1px;
     background: rgb(from currentColor r g b / 0.33);
-    height: clamp(var(--font-size-32), 4vw, var(--font-size-64));
+    height: clamp(var(--font-size-48), 5vw, var(--font-size-64));
 }
 .scroll-animation:after {
     content: "";
@@ -298,6 +333,128 @@ a:hover {
         transform-origin: top;
     }
 }
+/* 
+ * 
+ * 
+ * Items by ID.
+ * 
+ * 
+ */
+#handwriting-hearts {
+    max-width: var(--spacing-600);
+    margin-bottom: calc(var(--spacing-200) * -1);
+    align-self: center;
+}
+#attire-swatches {
+    padding-bottom: var(--spacing-200);
+}
+/* 
+ * 
+ * 
+ * Reusable sections.
+ * 
+ * 
+ */
+.preview {
+    padding-top: var(--spacing-400);
+    padding-bottom: var(--spacing-400);
+    @media ( min-width: 64rem ) {
+        padding-top: var(--spacing-800);
+        padding-bottom: var(--spacing-600);
+    }
+}
+.preview h2 {
+    margin-bottom: var(--spacing-400);
+}
+.events, .timeline {
+    padding-top: var(--spacing-400);
+    padding-bottom: var(--spacing-400);
+
+    @media ( min-width: 48rem ) {
+        padding-top: var(--spacing-600);
+        padding-bottom: var(--spacing-600);
+    }
+}
+.pill {
+    font-family: var(--font-jost);
+    font-size: var(--font-size-12);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    border-radius: 0.4em;
+    padding: 0.66em 0.9em;
+    text-align: center;
+    width: fit-content;
+}
+.feature {
+    aspect-ratio: 4/5;
+    @media ( min-width: 48rem ) /* Tablet 768 */ {
+        aspect-ratio: unset;
+    }
+}
+.feature img, .feature video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.timeline-cell {
+    align-items: center;
+}
+.timeline-cell .cell-feature {
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+    @media ( min-width: 48rem ) {
+        aspect-ratio: 4/5;
+        grid-row: auto;
+    }
+}
+.timeline-cell .prose {
+    grid-row: 3;
+    @media ( min-width: 48rem ) {
+        grid-row: auto;
+    }
+}
+.cell-feature:has(.details):before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right top, rgb(from var(--color-black) r g b / 0.5), transparent 66%);
+}
+.cell-feature img, .cell-feature video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.cell-feature .details {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: unset;
+    height: 100%;
+    color: var(--color-eggshell);
+    padding: var(--font-size-24);
+}
+.cell-feature .details h2 {
+    font-family: var(--font-jost);
+    font-size: var(--font-size-24);
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+/*
+ *
+ *
+ * The homepage uses a 'hub' of oversized navigation links. Styling here.
+ *
+ *
+ */
 .hub {
     text-align: center !important;
     padding: var(--spacing-400) 0;
@@ -362,41 +519,11 @@ a:hover {
         text-align: left !important;
     }
 }
-.introduction {
-    padding-top: var(--spacing-1000);
-    padding-bottom: var(--spacing-800);
-}
-.introduction h2 {
-    margin-bottom: var(--spacing-400);
-}
-.feature {
-    aspect-ratio: 4/5;
-    @media ( min-width: 48rem ) /* Tablet 768 */ {
-        aspect-ratio: unset;
-    }
-}
-.feature img, .feature video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.gallery {
-    padding-top: 0;
-    padding-bottom: var(--spacing-400);
-    @media ( min-width: 48rem ) /* Tablet 768 */ {
-        padding: var(--spacing-400) 0;
-    }
-}
-.gallery .grid {
-    align-items: center;
-}
-.gallery img {
-    padding-top: 0.25em;
-}
+
 /* 
  *
  *
- * Phase-agnostic styling.
+ * Footer stylings.
  *
  *
  */
@@ -488,6 +615,9 @@ a:hover {
 footer {
     padding: var(--spacing-600) 0 var(--spacing-800) !important;
 }
+.mini-footer {
+    padding: var(--spacing-500) 0 !important;
+}
 footer .container {
     gap: var(--spacing-600);
 }
@@ -499,5 +629,37 @@ footer #footer-logo-secondary {
 }
 footer .disclaimer {
     font-size: var(--font-size-12);
-    max-width: 60ch;
+    max-width: 66ch;
 }
+/*
+ *
+ *
+ * Event Listings, used primarily on the wedding party page.
+ *
+ *
+ */
+ .event-listing {
+    width: 100%;
+    border-top: 1px solid rgb(from currentColor r g b / 0.5);
+    text-align: left;
+    padding: var(--spacing-200) 0;
+    margin: 0;
+    align-items: center;
+ }
+ .event-listing:last-child {
+    border-bottom: 1px solid rgb(from currentColor r g b / 0.5);
+ }
+ .event-listing .event-meta {
+    font-family: var(--font-jost);
+    font-size: var(--font-size-14);
+    text-transform: uppercase;
+    opacity: 0.66;
+    font-weight: 500;
+ }
+ .event-listing .event-title {
+    font-family: var(--font-larken);
+    font-size: var(--font-pre-footer);
+ }
+ .event-listing .event-description {
+    padding-top: var(--spacing-50);
+ }
