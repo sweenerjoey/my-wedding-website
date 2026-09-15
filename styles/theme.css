@@ -48,7 +48,7 @@
 body {
     background: top left / 66% repeat url(../assets/bg-texture-eggshell.jpg), var(--color-eggshell);
     color: var(--color-coffee);
-    font-size: var(X);
+    font-size: var(--font-size-16);
 }
 hr {
     margin: var(--spacing-200) auto;
