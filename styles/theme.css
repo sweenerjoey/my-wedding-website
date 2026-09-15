@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --content-max-width: 990px;
-    --content-narrow-width: 66ch;
+    --content-max-width: 960px;
+    --content-narrow-width: 540px;
 
     --color-eggshell: #eeeeee;
     --color-sunflower: #fac526;
@@ -21,110 +21,49 @@
     --color-black-overlay-30: rgb(from var(--color-black) r g b / 0.30);
     --color-black-overlay-50: rgb(from var(--color-black) r g b / 0.50);
 
-    --font-jost: "Jost", Helvetica, Arial, sans-serif;
-    --font-larken: "Larken", Georgia, serif;
+    --font-jost: "Jost", ui-sans-serif, system-ui;
+    --font-larken: "Larken", Times, serif;
     --font-public-sans: "Public Sans", Helvetica, Arial, sans-serif;
+
     --font-size-12: calc(var(--base-value) * 0.75);
     --font-size-14: calc(var(--base-value) * 0.875);
     --font-size-16: var(--base-value);
+    --font-size-20: calc(var(--base-value) * 1.25);
     --font-size-24: calc(var(--base-value) * 1.5);
     --font-size-32: calc(var(--base-value) * 2);
     --font-size-48: calc(var(--base-value) * 3);
     --font-size-64: calc(var(--base-value) * 4);
-    --font-size-80: calc(var(--base-value) * 5);
+    --font-size-96: calc(var(--base-value) * 6);
     --font-size-144: calc(var(--base-value) * 9);
-
-    --font-h1-clamp: clamp(var(--font-size-48), 5.5vw, var(--font-size-80));
-    --font-pre-footer: clamp(var(--font-size-24), 3vw, var(--font-size-32));
-    --font-xl-clamp: clamp(var(--font-size-80), 18vw, var(--font-size-144));
 
     --line-height-80: 80%;
     --line-height-120: 120%;
     --line-height-160: 160%;
 
+    --letter-spacing-loose: 0.05rem;
     --letter-spacing-normal: 0;
-    --letter-spacing-tight: -0.01em;
-    --letter-spacing-tighter: -0.03em;
-}
-
-html {
-    font-size: var(--base-value);
+    --letter-spacing-tight: -0.025rem;
+    --letter-spacing-tighter: -0.75rem;
 }
 body {
     background: top left / 66% repeat url(../assets/bg-texture-eggshell.jpg), var(--color-eggshell);
     color: var(--color-coffee);
-}
-.narrow /* Constrains a container or element to a smaller maximum size than the content-max-width. */ {
-    max-width: var(--content-narrow-width);
+    font-size: var(X);
 }
 hr {
-    margin-top: var(--spacing-200);
-    margin-bottom: var(--spacing-200);
+    margin: var(--spacing-200) auto;
     border: none;
-    border-top: 1px solid rgb(from currentColor r g b / 0.5);
+    border-top: 1px solid;
+    color: inherit;
+    opacity: 0.5;
 }
-.spacer {
-    border: none;
-    margin-top: var(--spacing-400);
-    
-    @media ( min-width: 48rem ) {
-        border: none;
-        border-top: 1px solid rgb(from currentColor r g b / 0.5);
-        margin-bottom: var(--spacing-400);
-    }
-}
-/* 
- *
- *
- * Typography
- *
- *
- */
-.h1-xl-sans, .h1-xl-serif {
-    font-size: var(--font-xl-clamp);
-    line-height: var(--line-height-80);
-    margin: 0;
-}
-.h1-xl-sans {
-    font-family: var(--font-jost);
-    font-weight: 300;
-    letter-spacing: var(--letter-spacing-tighter);
-    text-transform: uppercase;
-}
-.h1-xl-serif {
-    font-family: var(--font-larken);
-    font-weight: 300;
-    letter-spacing: var(--letter-spacing-tight);
-}
-h1 {
-    font-family: var(--font-larken);
-    font-weight: 300;
-    font-size: var(--font-h1-clamp);
-    line-height: var(--line-height-120);
-    letter-spacing: var(--letter-spacing-tighter);
-}
-h2 {
-    font-family: var(--font-larken);
-    font-weight: 300;
-    font-size: var(--font-size-32);
-    line-height: var(--line-height-120);
-    letter-spacing: var(--letter-spacing-tight);
 
-    @media ( min-width: 64rem ) /* Laptop 1024 */ {
-        font-size: var(--font-size-48);
-    }
-}
-h3 {
-    font-family: var(--font-larken);
-    font-weight: 300;
-    font-size: var(--font-size-32);
-    line-height: var(--line-height-120);
-    letter-spacing: var(--letter-spacing-tight);
-    margin-bottom: var(--spacing-200);
-}
-#description h3 {
-    margin-bottom: 0;
-}
+/* //////// //////// */
+/* //////// TYPOGRAPHY */
+/* //////// //////// */
+
+/* --- */
+/* --- Base Styles */
 p {
     font-family: var(--font-public-sans);
     line-height: var(--line-height-160);
@@ -134,11 +73,11 @@ p + p {
 }
 p a, a {
     font-family: var(--font-jost);
-    font-weight: 500;
-    font-size: var(--font-size-14);
     line-height: var(--line-height-120);
-    letter-spacing: 0.05em;
+    letter-spacing: var(--letter-spacing-loose);
+    font-size: var(--font-size-14);
     text-transform: uppercase;
+    font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 50%;
     text-decoration-thickness: 1px;
@@ -147,6 +86,103 @@ p a, a {
 }
 a:hover {
     text-decoration-color: transparent;
+}
+h3, h2, h1 {
+    font-family: var(--font-larken);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-tight);
+    font-weight: 300;
+}
+h3 {
+    font-size: var(--font-size-32);
+    padding-bottom: var(--spacing-200);
+}
+h2 {
+    font-size: calc(var(--font-size-32));
+    @media ( min-width: 64rem ) {
+        font-size: var(--font-size-48);
+    }
+}
+h1 {
+    font-size: var(--font-size-48);
+    @media ( min-width: 64rem ) {
+        font-size: var(--font-size-64);
+    }
+}
+
+/* --- */
+/* --- Font Classes */
+ .font-jost {
+    font-family: var(--font-jost);
+ }
+ .font-larken {
+    font-family: var(--font-larken);
+    letter-spacing: var(--letter-spacing-tight);
+ }
+
+/* --- */
+ /* --- Typography Scale Classes */
+.type-label-sm {
+    font-family: var(--font-jost);
+    font-size: var(--font-size-12);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-loose);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.type-label {
+    font-family: var(--font-jost);
+    font-size: var(--font-size-14);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-loose);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.type-body-sm {
+    font-family: var(--font-public-sans);
+    font-size: var(--font-size-14);
+}
+.type-title-sm {
+    font-family: var(--font-jost);
+    font-size: var(--font-size-20);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-loose);
+}
+.type-title {
+    font-family: var(--font-jost);
+    font-size: var(--font-size-24);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-loose);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.type-heading-sm {
+    font-size: var(--font-size-32);
+    line-height: var(--line-height-120);
+}
+.type-heading {
+    font-size: var(--font-size-48);
+    line-height: var(--line-height-120);
+}
+.type-display-sm {
+    font-size: var(--font-size-64);
+    line-height: var(--line-height-80);
+}
+.type-display {
+    font-size: var(--font-size-64);
+    line-height: var(--line-height-80);
+
+    @media ( min-width: 64rem ) {
+        font-size: var(--font-size-96);
+    }
+}
+.type-display-lg {
+    font-size: var(--font-size-96);
+    line-height: var(--line-height-80);
+
+    @media ( min-width: 64rem ) {
+        font-size: var(--font-size-144);
+    }
 }
 /* 
  *
@@ -282,9 +318,6 @@ a:hover {
     padding-bottom: unset;
 }
 .scroll {
-    font-family: var(--font-jost);
-    font-size: var(--font-size-14);
-    text-transform: uppercase;
     position: absolute;
     bottom: 0;
     display: flex;
@@ -299,7 +332,7 @@ a:hover {
     position: relative;
     width: 1px;
     background: rgb(from currentColor r g b / 0.33);
-    height: clamp(var(--font-size-48), 5vw, var(--font-size-64));
+    height: clamp(var(--spacing-300), 4vw, var(--spacing-400));
 }
 .scroll-animation:after {
     content: "";
@@ -351,10 +384,13 @@ a:hover {
 /* 
  * 
  * 
- * Reusable sections.
+ * Reusable sections, utilities etc.
  * 
  * 
  */
+.narrow /* Constrains a container or element to a smaller maximum size than the content-max-width. */ {
+    max-width: var(--content-narrow-width);
+}
 .preview {
     padding-top: var(--spacing-400);
     padding-bottom: var(--spacing-400);
@@ -376,11 +412,6 @@ a:hover {
     }
 }
 .pill {
-    font-family: var(--font-jost);
-    font-size: var(--font-size-12);
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.2em;
     border-radius: 0.4em;
     padding: 0.66em 0.9em;
     text-align: center;
@@ -399,6 +430,12 @@ a:hover {
 }
 .timeline-cell {
     align-items: center;
+}
+.timeline-cell + .timeline-cell {
+    margin-top: var(--spacing-500);
+    @media ( min-width: 48rem ) {
+        margin-top: var(--spacing-800);
+    }
 }
 .timeline-cell .cell-feature {
     position: relative;
@@ -441,13 +478,6 @@ a:hover {
     color: var(--color-eggshell);
     padding: var(--font-size-24);
 }
-.cell-feature .details h2 {
-    font-family: var(--font-jost);
-    font-size: var(--font-size-24);
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-}
 /*
  *
  *
@@ -456,9 +486,9 @@ a:hover {
  *
  */
 .hub {
-    text-align: center !important;
     padding: var(--spacing-400) 0;
     color: var(--color-coffee);
+    text-align: center;
 }
 .hub .container {
     border-top: 1px solid var(--color-coffee);
@@ -475,7 +505,7 @@ a:hover {
     .hub a:hover, .hub a:focus, .hub a:active {
         opacity: 1;
     }
-    .hub a:hover h1, .hub a:focus h1, .hub a:active h1 {
+    .hub a:hover h2, .hub a:focus h2, .hub a:active h2 {
         font-family: var(--font-larken) !important;
         text-transform: none;
         font-style: italic;
@@ -486,14 +516,14 @@ a:hover {
     .hub a:hover, .hub a:focus, .hub a:active {
         opacity: 1;
     }
-    .hub a:hover h1, .hub a:focus h1, .hub a:active h1 {
+    .hub a:hover h2, .hub a:focus h2, .hub a:active h2 {
         font-family: var(--font-larken) !important;
         text-transform: none;
         font-style: italic;
     }
 }
 .hub #hub-rings {
-    height: var(--font-pre-footer);
+    max-width: var(--spacing-600);
     margin: var(--spacing-800) 0 var(--spacing-400);
     padding: 0;
     opacity: 0.5;
@@ -501,6 +531,9 @@ a:hover {
 .hub #description {
     text-transform: none !important;
     display: none;
+}
+#description h3 {
+    padding-bottom: 0;
 }
 @media ( min-width: 64rem ) /* Laptop 1024 */ {
     .hub #description {
@@ -541,20 +574,12 @@ a:hover {
     display: inline-flex;
     flex-direction: column;
     list-style-type: none;
-    font-family: var(--font-larken);
-    font-weight: 300;
-    font-size: var(--font-size-32);
-    line-height: var(--line-height-120);
-    letter-spacing: var(--letter-spacing-tight);
     width: 10rem;
 }
 .countdown li span {
     display: block;
-    font-family: var(--font-jost);
     font-weight: 400;
-    font-size: var(--font-size-80);
-    line-height: var(--line-height-120);
-    letter-spacing: var(--letter-spacing-tighter);
+    padding-bottom: var(--spacing-100);
 }
 @media ( min-width: 48rem ) /* Tablet 768 */ {
     .countdown {
@@ -568,13 +593,17 @@ a:hover {
 }
 .pre-footer {
     display: block;
+    text-transform: unset;
     padding: var(--spacing-400) 0;
     text-transform: unset !important;
-    font-family: var(--font-larken);
-    font-size: var(--font-pre-footer);
     text-decoration: none !important;
-    letter-spacing: var(--letter-spacing-tight);
     transition: all ease 0.4s;
+
+    --pre-footer-font-size: var(--font-size-24);
+
+    @media ( min-width: 64rem ) {
+        --pre-footer-font-size: var(--font-size-32);
+    }
 }
 .pre-footer > .container {
     display: flex;
@@ -582,14 +611,19 @@ a:hover {
     justify-content: space-between;
     align-items: center;
 }
+.pre-footer-text {
+    font-size: var(--pre-footer-font-size);
+    font-family: var(--font-larken);
+    letter-spacing: var(--letter-spacing-tight);
+}
 .pre-footer .pre-footer-arrow {
     position: relative;
     flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(var(--font-pre-footer) * 1.5);
-    height: calc(var(--font-pre-footer) * 1.5);
+    width: calc(var(--pre-footer-font-size) * 1.5);
+    height: calc(var(--pre-footer-font-size) * 1.5);
     overflow: hidden;
     border: 1px solid rgb(from currentColor r g b / 0.33);
     border-radius: 50%;
@@ -597,17 +631,17 @@ a:hover {
 }
 .pre-footer .pre-footer-arrow > i {
     position: absolute;
-    font-size: calc(var(--font-pre-footer) * 0.66);
+    font-size: calc(var(--pre-footer-font-size) * 0.66);
     transition: all ease 0.4s;
 }
 .pre-footer .pre-footer-arrow > i:first-child {
     transform: translateX(0);
 }
 .pre-footer:hover .pre-footer-arrow > i:first-child {
-    transform: translateX(calc(calc(var(--font-pre-footer) * 1.5) * 1));
+    transform: translateX(calc(calc(var(--pre-footer-font-size) * 1.5) * 1));
 }
 .pre-footer .pre-footer-arrow > i:last-child {
-    transform: translateX(calc(calc(var(--font-pre-footer) * 1.5) * -1));
+    transform: translateX(calc(calc(var(--pre-footer-font-size) * 1.5) * -1));
 }
 .pre-footer:hover .pre-footer-arrow > i:last-child {
     transform: translateX(0);
@@ -622,14 +656,10 @@ footer .container {
     gap: var(--spacing-600);
 }
 footer #footer-logo-primary {
-    max-height: 8rem;
+    max-height: var(--spacing-600);
 }
 footer #footer-logo-secondary {
-    max-width: 6rem;
-}
-footer .disclaimer {
-    font-size: var(--font-size-12);
-    max-width: 66ch;
+    max-width: var(--spacing-600);
 }
 /*
  *
@@ -650,15 +680,11 @@ footer .disclaimer {
     border-bottom: 1px solid rgb(from currentColor r g b / 0.5);
  }
  .event-listing .event-meta {
-    font-family: var(--font-jost);
-    font-size: var(--font-size-14);
-    text-transform: uppercase;
     opacity: 0.66;
     font-weight: 500;
  }
  .event-listing .event-title {
     font-family: var(--font-larken);
-    font-size: var(--font-pre-footer);
  }
  .event-listing .event-description {
     padding-top: var(--spacing-50);
