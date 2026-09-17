@@ -22,8 +22,8 @@
     --color-black-overlay-50: rgb(from var(--color-black) r g b / 0.50);
 
     --font-jost: "Jost", ui-sans-serif, system-ui;
-    --font-larken: "Larken", Times, serif;
-    --font-public-sans: "Public Sans", Helvetica, Arial, sans-serif;
+    --font-larken: "Larken", "Times", serif;
+    --font-public-sans: "Public Sans", "Helvetica", "Arial", sans-serif;
 
     --font-size-12: calc(var(--base-value) * 0.75);
     --font-size-14: calc(var(--base-value) * 0.875);
@@ -40,10 +40,10 @@
     --line-height-120: 120%;
     --line-height-160: 160%;
 
-    --letter-spacing-loose: 0.05rem;
+    --letter-spacing-loose: 0.05em;
     --letter-spacing-normal: 0;
-    --letter-spacing-tight: -0.025rem;
-    --letter-spacing-tighter: -0.75rem;
+    --letter-spacing-tight: -0.015em;
+    --letter-spacing-tighter: -0.03em;
 }
 body {
     background: top left / 66% repeat url(../assets/bg-texture-eggshell.jpg), var(--color-eggshell);
@@ -57,13 +57,11 @@ hr {
     color: inherit;
     opacity: 0.5;
 }
-
-/* //////// //////// */
-/* //////// TYPOGRAPHY */
-/* //////// //////// */
-
-/* --- */
-/* --- Base Styles */
+/* 
+ * 
+ * Typography, starting with base styles.
+ *
+ */
 p {
     font-family: var(--font-public-sans);
     line-height: var(--line-height-160);
@@ -99,6 +97,7 @@ h3 {
 }
 h2 {
     font-size: calc(var(--font-size-32));
+    padding-bottom: var(--spacing-200);
     @media ( min-width: 64rem ) {
         font-size: var(--font-size-48);
     }
@@ -109,19 +108,23 @@ h1 {
         font-size: var(--font-size-64);
     }
 }
-
-/* --- */
-/* --- Font Classes */
- .font-jost {
+/* 
+ * 
+ * Font declaration utility classes.
+ *
+ */
+.font-jost {
     font-family: var(--font-jost);
- }
- .font-larken {
+}
+.font-larken {
     font-family: var(--font-larken);
     letter-spacing: var(--letter-spacing-tight);
- }
-
-/* --- */
- /* --- Typography Scale Classes */
+}
+/* 
+ * 
+ * Typography Scale, represented as assignable classes.
+ *
+ */
 .type-label-sm {
     font-family: var(--font-jost);
     font-size: var(--font-size-12);
@@ -136,11 +139,19 @@ h1 {
     line-height: var(--line-height-120);
     letter-spacing: var(--letter-spacing-loose);
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
+}
+.type-label + h3, .type-label + h2, .type-label + h1 {
+    margin-top: var(--font-size-32);
 }
 .type-body-sm {
     font-family: var(--font-public-sans);
     font-size: var(--font-size-14);
+    letter-spacing: var(--letter-spacing-tight);
+}
+.type-body {
+    font-family: var(--font-public-sans);
+    font-size: var(--font-size-16);
 }
 .type-title-sm {
     font-family: var(--font-jost);
@@ -157,12 +168,20 @@ h1 {
     font-weight: 400;
 }
 .type-heading-sm {
-    font-size: var(--font-size-32);
+    font-size: var(--font-size-24);
     line-height: var(--line-height-120);
+
+    @media ( min-width: 64rem ) {
+        font-size: var(--font-size-32);
+    }
 }
 .type-heading {
-    font-size: var(--font-size-48);
+    font-size: var(--font-size-32);
     line-height: var(--line-height-120);
+
+    @media ( min-width: 64rem ) {
+        font-size: var(--font-size-48);
+    }
 }
 .type-display-sm {
     font-size: var(--font-size-64);
@@ -187,12 +206,10 @@ h1 {
 /* 
  *
  *
- * Background Color Pairs
+ * BACKGROUNDS: Color Pairs
  *
  *
  */
-
-/* Greens */
  .bg-sage {
     background-color: var(--color-sage);
     color: var(--color-emerald);
@@ -206,7 +223,6 @@ h1 {
     color: var(--color-olive);
  }
 
-/* Browns */
  .bg-foam {
     background-color: var(--color-foam);
     color: var(--color-coffee);
@@ -220,7 +236,6 @@ h1 {
     color: var(--color-crema);
  }
 
-/* Purples */
  .bg-lavender {
     background-color: var(--color-lavender);
     color: var(--color-grape);
@@ -234,49 +249,66 @@ h1 {
     color: var(--color-amethyst);
  }
 
- /* Neutrals */
  .bg-white {
     background-color: white;
+    color: var(--color-coffee);
+ }
+ .bg-eggshell {
+    background-color: var(--color-eggshell);
     color: var(--color-coffee);
  }
 /* 
  *
  *
- * Background Treatments
+ * BACKGROUNDS: Paintings
  *
  *
  */
  .bg-monet-dinner {
-    background: linear-gradient(rgb(from var(--color-black) r g b / 0.33)), center 25% / cover no-repeat url(../assets/paintings/interior_after_dinner_1983.1.26.jpg);
+    background: linear-gradient(var(--color-black-overlay-30)), center 25% / cover no-repeat url(../assets/paintings/interior_after_dinner_1983.1.26.jpg);
     color: var(--color-eggshell);
  }
  .bg-monet-argenteuil {
-    background: linear-gradient(rgb(from var(--color-black) r g b / 0.33)), center 80% / cover no-repeat url(../assets/paintings/argenteuil_1970.17.42.jpg);
+    background: linear-gradient(var(--color-black-overlay-30)), center 80% / cover no-repeat url(../assets/paintings/argenteuil_1970.17.42.jpg);
     color: var(--color-eggshell);
  }
- .wallpaper { /* Theme-specific utility class "wallpaper" will contain any image or video to the container it's inside. */
+ .bg-monet-garden-sunflowers {
+    background: linear-gradient(var(--color-black-overlay-30)), center 10% / cover no-repeat url(../assets/paintings/the_artist_s_garden_at_vetheuil_1970.17.45.jpg);
+    color: var(--color-eggshell);
+ }
+/* 
+ *
+ *
+ * BACKGROUNDS: Utilities
+ *
+ *
+ */
+ .wallpaper { /* Contains an image to its container */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -50;
+    z-index: -100;
     object-fit: cover;
  }
  img.wallpaper, video.wallpaper {
     padding: 0 !important;
     user-select: none;
  }
- /* Theme-specific utility classes "overlay-*" add a semi-transparent black screen. Apply to the container of a wallpaper, video or image. */
-.overlay-20 { 
+ /* Theme-specific utility classes "overlay-*" add semi-transparent black screens. Apply to the parent of a wallpaper. */
+.overlay-20 {
+    position: relative;
     background: var(--color-black-overlay-20);
     color: var(--color-eggshell);
 }
-.overlay-30 { 
+.overlay-30 {
+    position: relative;
     background: var(--color-black-overlay-30);
     color: var(--color-eggshell);
 }
 .overlay-50 { 
+    position: relative;
     background: var(--color-black-overlay-50);
     color: var(--color-eggshell);
 }
@@ -286,11 +318,11 @@ h1 {
 /* 
  *
  *
- * Hero styles.
+ * BLOCK: HERO //////// A large opening hero with center-aligned typography, and an elegant scroll indicator at the bottom. Design variants are indicated in the HTML via custom data.
  *
  *
  */
-.hero /* Applies base styling to all heroes on all pages. */ {
+.block.hero[data-layout="normal"], .block.hero[data-layout="home"], .block.hero[data-layout="text-only"] {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -299,23 +331,29 @@ h1 {
     align-items: center;
     min-height: 100vmin;
     width: 100%;
+
+    @media ( min-width: 48rem ) {
+        min-height: unset;
+        height: 100vmin;
+    }
 }
-.home-hero /* Apply in addition to 'hero' to override viewport height. */ {
+.block.hero[data-layout="home"] {
     min-height: 100vh;
     min-height: 100svh;
 }
 @media (min-width: 48rem) /* Tablet 768 */ {
-    .hero {
-        min-height: unset;
-        height: 100vmin;
-    }
-    .home-hero #splash {
+    .block.hero #splash {
         --grid-column-start: 3;
     }
 }
-.hero.text-only /* Apply 'text-only' class in addition to 'hero' to override spacing. */{
+.block.hero[data-layout="text-only"] {
     padding-top: var(--spacing-500);
     padding-bottom: unset;
+    background: unset;
+    color: var(--color-coffee);
+}
+.block.hero[data-layout="text-only"] .scroll, .block.hero[data-layout="text-only"] img, .block.hero[data-layout="text-only"] video {
+    display: none !important;
 }
 .scroll {
     position: absolute;
@@ -327,6 +365,7 @@ h1 {
 }
 .scroll-text {
     margin-bottom: 1em;
+    font-weight: 400;
 }
 .scroll-animation {
     position: relative;
@@ -342,9 +381,9 @@ h1 {
     width: 1px;
     height: 100%;
     background: currentColor;
-    animation: scrollprompt 4s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    animation: elegant-scroll-prompt 4s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 }
-@keyframes scrollprompt {
+@keyframes elegant-scroll-prompt {
     0% {
         transform: scaleY(0);
         transform-origin: top;
@@ -367,43 +406,176 @@ h1 {
     }
 }
 /* 
- * 
- * 
- * Items by ID.
- * 
- * 
+ *
+ *
+ * BLOCK: FOREWORD //////// A blockquote-style, center-aligned typographic preview treatment; can be used for a page opener, long-form copy, section markers, etc.
+ *
+ *
  */
-#handwriting-hearts {
-    max-width: var(--spacing-600);
-    margin-bottom: calc(var(--spacing-200) * -1);
-    align-self: center;
-}
-#attire-swatches {
-    padding-bottom: var(--spacing-200);
-}
-/* 
- * 
- * 
- * Reusable sections, utilities etc.
- * 
- * 
- */
-.narrow /* Constrains a container or element to a smaller maximum size than the content-max-width. */ {
-    max-width: var(--content-narrow-width);
-}
-.preview {
+ .block.foreword {
     padding-top: var(--spacing-400);
     padding-bottom: var(--spacing-400);
     @media ( min-width: 64rem ) {
-        padding-top: var(--spacing-800);
+        padding-top: var(--spacing-600);
         padding-bottom: var(--spacing-600);
     }
 }
-.preview h2 {
-    margin-bottom: var(--spacing-400);
+.block.foreword :last-child {
+    margin-top: var(--spacing-400);
+    padding: unset;
 }
-.events, .timeline {
-    padding-top: var(--spacing-400);
+/* 
+ *
+ *
+ * BLOCK: FEATURE //////// Full-width image, graphic or video. Constrains to a certain aspect ratio until larger breakpoints.
+ *
+ *
+ */
+.block.feature {
+    padding: 0;
+    position: relative;
+    aspect-ratio: 4/5;
+    width: 100%;
+    height: 100%;
+    margin-bottom: -4px;
+
+    @media ( min-width: 48rem ) /* Tablet 768 */ {
+        aspect-ratio: unset;
+    }
+}
+.block.feature img, .block.feature video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 
+ *
+ *
+ * BLOCK: MANIFEST //////// List-style designs for itineraries, event listings or navigation hubs. Custom data determines style variants.
+ *
+ *
+ */
+.block.manifest[data-layout="normal"], .block.manifest[data-layout="display"] {
+    padding-top: var(--spacing-800);
+    padding-bottom: var(--spacing-800);
+ }
+.block.manifest[data-layout="normal"] .row {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+    gap: var(--grid-gap);
+    width: 100%;
+    text-align: left;
+    padding: var(--spacing-200) 0 var(--spacing-100);
+    border-bottom: 1px solid rgb(from currentColor r g b / 0.5);
+ }
+.block.manifest[data-layout="normal"] .row * {
+    grid-column-start: var(--grid-column-start);
+    grid-column-end: var(--grid-span);
+    width: 100%;
+ }
+.block.manifest[data-layout="normal"] .row:first-child {
+    padding-top: var(--spacing-200);
+ }
+.block.manifest[data-layout="normal"] .row:is(a) {
+    position: relative;
+    text-decoration: none;
+    text-transform: none;
+    opacity: 0.50;
+    border-color: currentColor;
+ }
+.block.manifest[data-layout="normal"] .row:is(a):after {
+    content: '\2192';
+    position: absolute;
+    right: 2.5%;
+    bottom: calc(50% - var(--spacing-100));
+    font-size: var(--font-size-24);
+    font-weight: 100;
+ }
+.block.manifest[data-layout="normal"] .row:is(a):first-child {
+    padding-top: var(--spacing-200);
+ }
+.block.manifest[data-layout="normal"] .row .row-title {
+    font-family: var(--font-jost);
+    font-size: var(--font-size-14);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-loose);
+    text-transform: uppercase;
+    font-weight: 500;
+ }
+.block.manifest[data-layout="display"] .row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--flex-gap);
+    margin: 0;
+    width: 100%;
+    padding: var(--spacing-300) 0;
+    transition: all 0.6s;
+    opacity: 0.50;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid currentColor;
+
+    @media ( min-width: 48rem ) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+        text-align: right;
+    }
+ }
+.block.manifest[data-layout="display"] .row:last-child {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: var(--spacing-400);
+ }
+.block.manifest[data-layout="display"] .row[data-direction="reverse"] {
+    @media ( min-width: 48rem ) {
+        text-align: left;
+        flex-direction: row-reverse;
+    }
+ }
+.block.manifest[data-layout="display"] .row .row-title {
+    font-family: var(--font-jost);
+    font-weight: 300;
+    font-size: var(--font-size-96);
+    line-height: var(--line-height-80);
+    letter-spacing: var(--letter-spacing-tight);
+    text-transform: uppercase;
+
+    @media ( min-width: 64rem ) {
+        font-size: var(--font-size-144);
+    }
+ }
+.block.manifest[data-layout="display"] .row:hover, .block.manifest[data-layout="normal"] .row:is(a):hover {
+    opacity: 1;
+ }
+.block.manifest[data-layout="display"] .row:hover .row-title {
+    font-family: var(--font-larken);
+    text-transform: none;
+    font-style: italic;
+    transform: scale(0.95);
+ }
+.block.manifest[data-layout="display"] .row .row-details {
+    text-transform: none;
+    display: none;
+
+    @media (min-width: 48rem ) {
+        display: block;
+    }
+ }
+ .block.manifest[data-layout="display"] .row[data-show-details="false"] .row-details {
+    display: none;
+ }
+ .block.manifest + .block.manifest {
+    padding-top: 0;
+ }
+/* 
+ *
+ *
+ * BLOCK: TIMELINE //////// Card-style layouts meant for breaking up large chunks of information into a cascading, visual timeline. Layout uses custom data to determine flow direction.
+ *
+ *
+ */
+.block.timeline {
+    padding-top: var(--spacing-200);
     padding-bottom: var(--spacing-400);
 
     @media ( min-width: 48rem ) {
@@ -411,50 +583,29 @@ h1 {
         padding-bottom: var(--spacing-600);
     }
 }
-.pill {
-    border-radius: 0.4em;
-    padding: 0.66em 0.9em;
-    text-align: center;
-    width: fit-content;
-}
-.feature {
-    aspect-ratio: 4/5;
-    @media ( min-width: 48rem ) /* Tablet 768 */ {
-        aspect-ratio: unset;
-    }
-}
-.feature img, .feature video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.timeline-cell {
+.block.timeline .row {
     align-items: center;
 }
-.timeline-cell + .timeline-cell {
-    margin-top: var(--spacing-500);
+.block.timeline .row + .row {
+    margin-top: var(--spacing-800);
     @media ( min-width: 48rem ) {
         margin-top: var(--spacing-800);
     }
 }
-.timeline-cell .cell-feature {
+.block.timeline .image-feature {
+    grid-row: 1;
+    
     position: relative;
     aspect-ratio: 1/1;
     width: 100%;
     height: 100%;
-    grid-row: 1;
+
     @media ( min-width: 48rem ) {
         aspect-ratio: 4/5;
         grid-row: auto;
     }
 }
-.timeline-cell .prose {
-    grid-row: 3;
-    @media ( min-width: 48rem ) {
-        grid-row: auto;
-    }
-}
-.cell-feature:has(.details):before {
+.block.timeline .image-feature:has(.details):before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -463,133 +614,167 @@ h1 {
     height: 100%;
     background: linear-gradient(to right top, rgb(from var(--color-black) r g b / 0.5), transparent 66%);
 }
-.cell-feature img, .cell-feature video {
+.block.timeline .image-feature img, .block.timeline .image-feature video {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
-.cell-feature .details {
+.block.timeline .image-feature .details {
     position: absolute;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-between;
     width: unset;
     height: 100%;
     color: var(--color-eggshell);
-    padding: var(--font-size-24);
+    padding: 5%;
 }
-/*
- *
- *
- * The homepage uses a 'hub' of oversized navigation links. Styling here.
- *
- *
- */
-.hub {
-    padding: var(--spacing-400) 0;
-    color: var(--color-coffee);
-    text-align: center;
-}
-.hub .container {
-    border-top: 1px solid var(--color-coffee);
-}
-.hub a {
-    text-decoration: none;
-    border-bottom: 1px solid var(--color-coffee);
-    margin: 0;
-    padding: var(--spacing-300) 0;
-    opacity: 0.30;
-    transition: all 0.6s;
-}
-@media (hover: hover) {
-    .hub a:hover, .hub a:focus, .hub a:active {
-        opacity: 1;
-    }
-    .hub a:hover h2, .hub a:focus h2, .hub a:active h2 {
-        font-family: var(--font-larken) !important;
-        text-transform: none;
-        font-style: italic;
-        transform: scale(0.95);
-    }
-}
-@media (hover: none) {
-    .hub a:hover, .hub a:focus, .hub a:active {
-        opacity: 1;
-    }
-    .hub a:hover h2, .hub a:focus h2, .hub a:active h2 {
-        font-family: var(--font-larken) !important;
-        text-transform: none;
-        font-style: italic;
-    }
-}
-.hub #hub-rings {
-    max-width: var(--spacing-600);
-    margin: var(--spacing-800) 0 var(--spacing-400);
+.block.timeline .image-feature .details h2 {
     padding: 0;
-    opacity: 0.5;
 }
-.hub #description {
-    text-transform: none !important;
-    display: none;
-}
-#description h3 {
-    padding-bottom: 0;
-}
-@media ( min-width: 64rem ) /* Laptop 1024 */ {
-    .hub #description {
-        display: block;
-    }
-    .hub a {
-        justify-content: space-between;
-        align-items: end;
-        text-align: right;
-    }
-    .hub a.travel {
-        justify-content: flex-start;
-    }
-    .hub a.reverse {
-        flex-direction: row-reverse;
-        text-align: left !important;
-    }
-}
+.block.timeline .prose {
+    grid-row: 3;
 
+    @media ( min-width: 48rem ) {
+        grid-row: auto;
+    }
+}
+.block.timeline .row[data-direction="reverse"] {
+    align-items: center;
+
+    @media ( min-width: 48rem ) {
+        & .image-feature {
+            grid-row: 1;
+            grid-column-start: 7;
+        }
+        & .prose {
+            grid-row: 1;
+            grid-column-start: 1;
+        }
+    } 
+}
 /* 
  *
  *
- * Footer stylings.
+ * BLOCK: ACCORDION //////// A simple accordion, for long segments of information that can be collapsed.
  *
  *
  */
-.countdown {
+.block.accordion {
+    padding-top: var(--spacing-400);
+    padding-bottom: var(--spacing-400);
+}
+.block.accordion details {
+    padding-top: var(--spacing-100);
+    padding-bottom: var(--spacing-100);
+}
+.block.accordion details:not([open]) {
+    border-bottom: 1px solid rgb(from currentColor r g b / 0.5);
+}
+.block.accordion details > summary {
+    font-family: var(--font-larken);
+    letter-spacing: var(--letter-spacing-tight);
+    font-style: italic;
+    position: relative;
+}
+.block.accordion details > summary::marker {
+    content: '';
+}
+.block.accordion details > summary:after {
+    content: '\002B';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-family: var(--font-jost);
+    font-size: var(--font-size-48);
+    line-height: 100%;
+    font-weight: 100;
+    font-style: normal;
+}
+.block.accordion details[open] > summary:after {
+    content: '\2212';
+}
+.block.accordion .row {
+    padding-top: var(--spacing-100);
+    padding-bottom: var(--spacing-200);
+    border-bottom: 1px solid rgb(from currentColor r g b / 0.5);
+}
+.block.accordion .row:first-of-type {
+    padding-top: var(--spacing-200);
+    border-top: 1px solid rgb(from currentColor r g b / 0.5);
+}
+/* 
+ *
+ *
+ * BLOCK: COUNTDOWN //////// A countdown timer. Uses utility classes for further customization.
+ *
+ *
+ */
+.block.countdown {
     text-align: center;
     padding: var(--spacing-600) 0;
 }
-.countdown ul {
+.block.countdown ul {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-200);
+    gap: var(--spacing-300);
     align-items: center;
 }
-.countdown li {
+.block.countdown li {
     display: inline-flex;
     flex-direction: column;
     list-style-type: none;
     width: 10rem;
 }
-.countdown li span {
+.block.countdown li span {
     display: block;
     font-weight: 400;
     padding-bottom: var(--spacing-100);
 }
 @media ( min-width: 48rem ) /* Tablet 768 */ {
-    .countdown {
+    .block.countdown {
         padding: var(--spacing-800) 0;
     }
-    .countdown ul {
+    .block.countdown ul {
         flex-direction: row;
         gap: unset;
         justify-content: space-between;
     }
+}
+/* 
+ *
+ *
+ * BLOCK: FOOTER //////// Website footer. Uses custom data to show/hide a pre-footer call-to-action, or to make the footer smaller.
+ *
+ *
+ */
+/* footer {
+    padding: var(--spacing-600) 0 var(--spacing-800) !important;
+}
+.mini-footer {
+    padding: var(--spacing-500) 0 !important;
+}*/
+.block.footer[data-layout="normal"], .block.footer[data-layout="small"] {
+    padding: 0;
+ }
+.block.footer[data-layout="normal"] .container:not(.pre-footer > .container) {
+    margin: 0 auto;
+    gap: var(--spacing-600);
+    padding-top: var(--spacing-600);
+    padding-bottom: var(--spacing-800);
+}
+.block.footer[data-layout="small"] .container:not(.pre-footer > .container) {
+    margin: 0 auto;
+    gap: 0;
+    padding-top: var(--spacing-500);
+    padding-bottom: var(--spacing-500);
+}
+.block.footer[data-layout="small"] .container:not(.pre-footer > .container) *:not(#footer-logo-primary, #footer-logo-secondary) {
+    display: none;
+}
+.block.footer[data-show-pre-footer="false"] .pre-footer {
+    display: none;
+    pointer-events: none;
 }
 .pre-footer {
     display: block;
@@ -637,55 +822,58 @@ h1 {
 .pre-footer .pre-footer-arrow > i:first-child {
     transform: translateX(0);
 }
-.pre-footer:hover .pre-footer-arrow > i:first-child {
-    transform: translateX(calc(calc(var(--pre-footer-font-size) * 1.5) * 1));
-}
 .pre-footer .pre-footer-arrow > i:last-child {
     transform: translateX(calc(calc(var(--pre-footer-font-size) * 1.5) * -1));
+}
+.pre-footer:hover .pre-footer-arrow > i:first-child {
+    transform: translateX(calc(calc(var(--pre-footer-font-size) * 1.5) * 1));
 }
 .pre-footer:hover .pre-footer-arrow > i:last-child {
     transform: translateX(0);
 }
-footer {
-    padding: var(--spacing-600) 0 var(--spacing-800) !important;
-}
-.mini-footer {
-    padding: var(--spacing-500) 0 !important;
-}
-footer .container {
-    gap: var(--spacing-600);
-}
-footer #footer-logo-primary {
+/* 
+ * 
+ * 
+ * Items by ID.
+ * 
+ * 
+ */
+#footer-logo-primary {
     max-height: var(--spacing-600);
 }
-footer #footer-logo-secondary {
+#footer-logo-secondary, #hub-rings {
     max-width: var(--spacing-600);
 }
-/*
- *
- *
- * Event Listings, used primarily on the wedding party page.
- *
- *
+#hub-rings {
+    opacity: 0.5;
+    margin-top: var(--spacing-800);
+}
+#handwriting-thanks {
+    margin-top: calc(var(--spacing-200) * -1);
+    margin-bottom: var(--spacing-200);
+}
+#handwriting-hearts {
+    max-width: var(--spacing-600);
+    margin-top: var(--spacing-200);
+    margin-bottom: calc(var(--spacing-200) * -1);
+    align-self: center;
+}
+#attire-swatches {
+    padding-bottom: var(--spacing-200);
+}
+/* 
+ * 
+ * 
+ * Utilities.
+ * 
+ * 
  */
- .event-listing {
-    width: 100%;
-    border-top: 1px solid rgb(from currentColor r g b / 0.5);
-    text-align: left;
-    padding: var(--spacing-200) 0;
-    margin: 0;
-    align-items: center;
- }
- .event-listing:last-child {
-    border-bottom: 1px solid rgb(from currentColor r g b / 0.5);
- }
- .event-listing .event-meta {
-    opacity: 0.66;
-    font-weight: 500;
- }
- .event-listing .event-title {
-    font-family: var(--font-larken);
- }
- .event-listing .event-description {
-    padding-top: var(--spacing-50);
- }
+.narrow /* Constrains a container or element to a smaller maximum size than the content-max-width. */ {
+    max-width: var(--content-narrow-width);
+}
+.pill {
+    border-radius: 0.25em;
+    padding: 0.5em 1em;
+    text-align: center;
+    width: fit-content;
+}

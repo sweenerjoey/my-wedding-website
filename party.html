@@ -26,15 +26,10 @@
           <a href="index.html" class="nav-logo" tabindex="-1">
             <img src="./assets/logos/JM_Monogram_Eggshell.svg" alt="Joey and Megan wedding monogram mark" loading="lazy">
           </a>
-          <a for="site-menu" class="site-header-btn" style="border: none !important; pointer-events: none;"></a>
+          <a class="site-header-btn" style="border: none !important; pointer-events: none;"></a>
         </div>
       </header>
-      <section class="block hero home-hero overlay-50">
-        <video autoplay muted loop playsinline disablepictureinpicture disableremoteplayback poster="./assets/videos/12423706_Poster.jpg" class="wallpaper">
-          <source src="./assets/videos/12423704_640_360_25fps.mp4" type="video/mp4" id="small">
-          <source src="./assets/videos/12423705_960_540_25fps.mp4" type="video/mp4" id="medium" media="(min-width: 48rem)">
-          <source src="./assets/videos/12423706_1280_720_25fps.mp4" type="video/mp4" id="large" media="(min-width: 64rem)">
-        </video>
+      <section class="block hero overlay-50" data-layout="home">
         <div class="container flex flex-col center">
           <h1>Welcome to the <i>Wedding Party</i></h1>
           <p class="narrow">Below, you'll find all the details you'll need about on-site lodging, day-of wardrobe, wedding party plans and more. Sláinte!</p>
@@ -43,10 +38,15 @@
           <div class="scroll-text">Discover</div>
           <div class="scroll-animation"></div>
         </div>
+        <video autoplay muted loop playsinline disablepictureinpicture disableremoteplayback poster="./assets/videos/12423706_Poster.jpg" class="wallpaper">
+          <source src="./assets/videos/12423704_640_360_25fps.mp4" type="video/mp4" id="small">
+          <source src="./assets/videos/12423705_960_540_25fps.mp4" type="video/mp4" id="medium" media="(min-width: 48rem)">
+          <source src="./assets/videos/12423706_1280_720_25fps.mp4" type="video/mp4" id="large" media="(min-width: 64rem)">
+        </video>
       </section>
-      <section class="block preview bg-foam">
+      <section class="block foreword bg-foam">
         <div class="container flex flex-col narrow">
-          <img src="./assets/00_handwritten-thanks.svg" alt="Thank you, from the bottom of our hearts." id="handwriting-thanks" style="margin-top: calc(var(--spacing-200) * -1);">
+          <img src="./assets/00_handwritten-thanks.svg" alt="Thank you, from the bottom of our hearts." id="handwriting-thanks">
           <p>We’ve been sitting here trying to figure out how to start this letter. It’s hard, because we think there’s a lot to say. The short version is this: we’re genuinely thrilled to be sharing such an important day with all of you. Picturing everyone standing beside us fills us with glee.</p>
           <p>The longer version is that every one of you have had a profound impact on our lives&mdash;in ways obviously big to subtly small&mdash;and we're just so fortunate to have you in our lives. Our ideas of what courage, family, community and love look like have been deeply influenced by your wellspring of generosity and kindness. If ever you’ve helped us move house (something we've done a lot!); if you’ve ever been a listening ear while we’ve ranted about something unjust; if you’ve ever offered personal advice, career coaching, portfolio-finessing or talked us down from any hypothetical ledges; or even if you’ve just picked us up from the train station, watered our houseplants or fed our cat. We’d be nothing without all of the parts of ourselves that’ve been dutifully assembled with your help.</p>
           <p>Our wedding weekend is just as much for y'all as it is for us. Heritage Barn offers two gorgeous on-site houses for the party to stay in, which you’ll learn more about below. We invite you to please make yourselves at home with us, and we hope you’re as stoked as we are to celebrate our love together. See you soon!</p>
@@ -55,61 +55,111 @@
         </div>
       </section>
       <section class="block timeline">
-        <div class="container grid timeline-cell">
-          <div class="span-all md-span-6 cell-feature">
-            <div class="details">
-              <span class="pill bg-olive type-label-sm">Sleeps 10</span>
-              <h2 class="type-title">The Farmhouse</h2>
+        <div class="container">
+          <article class="grid row" data-direction="normal">
+            <div class="image-feature span-all md-span-6">
+              <div class="details">
+                <h2 class="type-title">The Farmhouse</h2>
+                <span class="pill bg-olive type-label-sm">Sleeps 10</span>
+              </div>
+              <img src="./assets/heritage-barn/hb_farmhouse.jpg" alt="The Farmhouse on the Heritage Barn property.">
             </div>
-            <img src="./assets/heritage-barn/hb_farmhouse.jpg" alt="The Farmhouse on the Heritage Barn property.">
-          </div>
-          <div class="span-all md-span-1"></div>
-          <div class="span-all md-span-5 prose">
-            <h3>The bridesmaids will be staying in <i>The Farmhouse.</i></h3>
-            <p>The ladies will enjoy this beautifully updated 1800s farmhouse. Includes a large backyard and an outdoor fire pit, perfect for late-night hangs and drinks under the August moonlight.</p>
-            <hr>
-            <img id="attire-swatches" src="./assets/00_color-palette_purples.svg" alt="Color palette swatches for the bridesmaids, showing a lavender color, an amethyst purple color, and a deep grape color.">
-            <p>Megan recommends picking a few different styles of dresses in the above colors, and then texting her before you commit to a purchase.</p>
-          </div>
+            <div class="span-all md-span-1"></div>
+            <div class="span-all md-span-5 prose">
+              <h3>The bridesmaids will be staying in <i>The Farmhouse.</i></h3>
+              <p>The ladies will enjoy this beautifully updated 1800s farmhouse. Includes a large backyard and an outdoor fire pit, perfect for late-night hangs and drinks under the August moonlight.</p>
+              <hr>
+              <img id="attire-swatches" src="./assets/00_color-palette_purples.svg" alt="Color palette swatches for the bridesmaids, showing a lavender color, an amethyst purple color, and a deep grape color.">
+              <p>Megan recommends picking a few different styles of dresses in the above colors, and then texting her before you commit to a purchase.</p>
+            </div>
+          </article>
+          <article class="grid row" data-direction="normal">
+            <div class="image-feature span-all md-span-6">
+              <div class="details">
+                <h2 class="type-title">The Hop House</h2>
+                <span class="pill bg-olive type-label-sm">Sleeps 9</span>
+              </div>
+              <img src="./assets/heritage-barn/hb_hop-house-vertical.jpg" alt="The Hop House on the Heritage Barn property.">
+            </div>
+            <div class="span-all md-span-1"></div>
+            <div class="span-all md-span-5 prose">
+              <h3>The groomsmen will be staying in <i>The Hop House.</i></h3>
+              <p>The fellas are crashing at this cozy home that overlooks Heritage Barn’s hop fields. It’s the perfect HQ for our weekend: Joey calls dibs on the “Civil War Room,” JSYK.</p>
+              <hr>
+              <img id="attire-swatches" src="./assets/00_color-palette_greens.svg" alt="Color palette swatches for the groomsmen, showing a sage green color, an olive color, and a deep emerald/forest green color.">
+              <p>Groomsmen are encouraged to find tuxedos, smoking jackets or dress shirts in these colors; it’ll be August, so don’t dress too warmly. </p>
+            </div>
+          </article>
         </div>
-        <div class="container grid timeline-cell">
-          <div class="span-all md-span-6 cell-feature">
-            <div class="details">
-              <span class="pill bg-olive type-label-sm">Sleeps 9</span>
-              <h2 class="type-title">The Hop House</h2>
+      </section>
+      <section class="block manifest bg-white" data-layout="normal">
+        <div class="container flex flex-col">
+          <h2><i>Upcoming</i> Events</h2>
+          <p>There aren't any planned events (yet). Check back soon!</p>
+          <div class="row" data-show-details="true" data-direction="normal" style="display: none;">
+            <p class="row-title span-all md-span-third">Row Title Sunday, Month Day</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Entry Title Lorem Ipsum</p>
+              <p class="type-body">Small body copy description — Lorem Ipsum Dolor Set</p>
             </div>
-            <img src="./assets/heritage-barn/hb_hop-house-vertical.jpg" alt="The Hop House on the Heritage Barn property.">
           </div>
-          <div class="span-all md-span-1"></div>
-          <div class="span-all md-span-5 prose">
-            <h3>The groomsmen will be staying in <i>The Hop House.</i></h3>
-            <p>The fellas are crashing at this cozy home that overlooks Heritage Barn’s hop fields. It’s the perfect HQ for our weekend: Joey calls dibs on the “Civil War Room,” JSYK.</p>
-            <hr>
-            <img id="attire-swatches" src="./assets/00_color-palette_greens.svg" alt="Color palette swatches for the groomsmen, showing a sage green color, an olive color, and a deep emerald/forest green color.">
-            <p>Groomsmen are encouraged to find tuxedos, smoking jackets or dress shirts in these colors; it’ll be August, so don’t dress too warmly. </p>
+          <div class="row" data-show-details="true" data-direction="normal" style="display: none;">
+            <p class="row-title span-all md-span-third">Row Title Sunday, Month Day</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Entry Title Lorem Ipsum</p>
+              <p class="type-body">Small body copy description — Lorem Ipsum Dolor Set</p>
+            </div>
+          </div>
+          <div class="row" data-show-details="true" data-direction="normal" style="display: none;">
+            <p class="row-title span-all md-span-third">Row Title Sunday, Month Day</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Entry Title Lorem Ipsum</p>
+              <p class="type-body">Small body copy description — Lorem Ipsum Dolor Set</p>
+            </div>
           </div>
         </div>
       </section>
-      <section class="block events bg-white">
-        <div class="container flex flex-col center">
-          <h2 style="margin-bottom: var(--spacing-400);"><i>Upcoming</i> Events</h2>
-          <p>No upcoming events. Please check back soon.</p>
-          <div class="event-listing grid" style="display: none;">
-            <p class="span-all md-span-third event-meta type-label">Saturday, Month Day</p>
-            <div class="span-all md-span-two-third">
-              <p class="event-title type-heading-sm">Event Title Bridal Shower</p>
-              <p class="event-description">Starts at 12:00 PM &mdash; Oswego, N.Y.</p>
+      <section class="block accordion">
+        <div class="container flex flex-col">
+          <details open>
+            <summary class="accordion-header type-heading-sm"><i>The Fine Print</i></summary>
+            <div class="row grid">
+              <p class="row-title span-all md-span-third type-label">Who’s Invited?</p>
+              <div class="row-details span-all md-span-two-third">
+                <p class="type-body">Because of the first-come, first-serve nature of Heritage Barn’s onsite lodging—and because both sets of parents are booked to stay on-site, too—only members of the wedding party are invited to stay with us, not your families. Thanks for understanding.</p>
+              </div>
             </div>
-          </div>
+            <div class="row grid">
+              <p class="span-all md-span-third type-label">When Can we Get There?</p>
+              <div class="span-all md-span-two-third">
+                <p class="type-body">We have access to the property for the whole weekend; we can arrive as early as XXXXXXX and are free to stay until 12:00 P.M. on Sunday. You don’t have to stay the entire time, especially if your family comes and stays elsewhere, but we highly encourage you to, so that we can do things like barbecues, drinks and brunches!</p>
+              </div>
+            </div>
+            <div class="row grid">
+              <p class="span-all md-span-third type-label">Please Be respectful.</p>
+              <div class="span-all md-span-two-third">
+                <p class="type-body">The accommodations are included in the cost of the venue, and we’re happy to have you all joining us. Though we’ve also purchased event insurance, we kindly ask that you be respectful of the property and the houses while you’re with us. </p>
+                <p>We don’t wanna have to pay extra if something gets damaged. <i>#sorrynotsorry</i></p>
+              </div>
+            </div>
+            <div class="row grid">
+              <p class="span-all md-span-third type-label">No after-Parties.</p>
+              <div class="span-all md-span-two-third">
+                <p class="type-body">We have explicit instructions from the venue owners that the houses cannot be used for after-parties. We would instead strongly encourage you to explore downtown Hamilton and enjoy a bit of bar-hopping (we might just join ya!).</p>
+              </div>
+            </div>
+          </details>
         </div>
       </section>
     </main>
-    <footer class="block bg-emerald mini-footer">
+    <footer class="block footer bg-grape" data-layout="small" data-show-pre-footer="false">
       <div class="container flex flex-col center">
-        <img src="./assets/logos/JM_Label_Rings_Sage.svg" alt="J + M detail with ring illustration, in sage." id="footer-logo-secondary">
+        <img src="./assets/logos/JM_Label_Rings_Lavender.svg" alt="JS + ML interlocking rings graphic" id="footer-logo-secondary">
+        <p>WEBSITE MADE BY THE GROOM<br><i>(and approved by the bride!)</i><br><br>#JoeyAndMegan2027</p>
+        <p class="type-body-sm narrow">Argenteuil by Claude Monet, c. 1872;<br>Courtesy National Gallery of Art, Washington.</p>
       </div>
     </footer>
-    <section class="block countdown bg-monet-argenteuil">
+    <section class="block countdown bg-monet-garden-sunflowers">
       <div class="container">
         <div id="countdown">
           <ul>
@@ -120,7 +170,7 @@
           </ul>
         </div>
         <div id="content" style="display: none;">
-          <h3>Thank you for celebrating our special day with us.<br>Check back soon for a gallery of wedding photos.</h3>
+          <h3>Thank you for celebrating our special day with us.<br>Check back soon for our gallery of wedding photos.</h3>
         </div>
       </div>
     </section>

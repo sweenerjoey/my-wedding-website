@@ -17,7 +17,7 @@
   </head>
   <body>
     <main>
-      <section class="block hero home-hero overlay-30">
+      <section class="block hero overlay-30" data-layout="home">
         <div class="container grid">
           <picture class="span-all md-span-all">
             <source media="(width < 48rem)" srcset="./assets/01_Invite_Mobile.svg">
@@ -27,6 +27,8 @@
         </div>
         <img class="wallpaper" src="./assets/paintings/the_artist_s_garden_in_argenteuil_a_corner_of_the_garden_with_dahlias_1991.27.1.jpg" alt="Claude Monet's painting of a bride and groom in a garden with dahlias.">
       </section>
+    </main>
+    <footer class="block footer bg-emerald" data-layout="normal" data-show-pre-footer="true">
       <a class="pre-footer bg-olive" href="https://www.visitmadisoncny.com/plan-your-visit/about-us/communities/hamilton-area/" target="_blank">
         <div class="container">
           <span class="pre-footer-text"><i>Explore</i> Hamilton, N.Y.</span>
@@ -36,8 +38,6 @@
           </div>
         </div>
       </a>
-    </main>
-    <footer class="block bg-emerald">
       <div class="container flex flex-col center">
         <img src="./assets/logos/JM_Primary_Sage.svg" alt="Joey and Megan, Ten Years in The Making." id="footer-logo-primary">
         <p>WEBSITE BEING DESIGNED BY THE GROOM<br><i>(with approvals from the bride!)</i><br><br>#JoeyAndMegan2027</p>
@@ -53,6 +53,9 @@
             <li class="type-heading-sm font-larken"><span class="type-display-sm font-jost" id="minutes"></span>Minutes</li>
             <li class="type-heading-sm font-larken"><span class="type-display-sm font-jost" id="seconds"></span>Seconds</li>
           </ul>
+        </div>
+        <div id="content" style="display: none;">
+          <h3>Thank you for celebrating our special day with us.<br>Check back soon for our gallery of wedding photos.</h3>
         </div>
       </div>
     </section>

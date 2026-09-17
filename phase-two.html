@@ -47,12 +47,7 @@
           </div>
         </div>
       </header>
-      <section class="block hero home-hero overlay-30">
-        <video autoplay muted loop playsinline disablepictureinpicture disableremoteplayback poster="./assets/videos/13001338_Poster.jpg" class="wallpaper">
-          <source src="./assets/videos/13001336_640_360_30fps.mp4" type="video/mp4" id="small">
-          <source src="./assets/videos/13001337_960_540_30fps.mp4" type="video/mp4" id="medium" media="(min-width: 48rem)">
-          <source src="./assets/videos/13001338_1280_720_30fps.mp4" type="video/mp4" id="large" media="(min-width: 64rem)">
-        </video>
+      <section class="block hero overlay-30" data-layout="home">
         <div class="container grid">
           <img id="splash" src="./assets/02_Hero_Splash.svg" alt="Joey Sweener and Megan Labosky are getting married on August 28, 2027." class="span-all md-span-two-thirds lg-span-two-thirds">
         </div>
@@ -60,63 +55,67 @@
           <div class="scroll-text">Scroll</div>
           <div class="scroll-animation"></div>
         </div>
+        <video autoplay muted loop playsinline disablepictureinpicture disableremoteplayback poster="./assets/videos/13001338_Poster.jpg" class="wallpaper">
+          <source src="./assets/videos/13001336_640_360_30fps.mp4" type="video/mp4" id="small">
+          <source src="./assets/videos/13001337_960_540_30fps.mp4" type="video/mp4" id="medium" media="(min-width: 48rem)">
+          <source src="./assets/videos/13001338_1280_720_30fps.mp4" type="video/mp4" id="large" media="(min-width: 64rem)">
+        </video>
       </section>
-      <section class="block preview bg-foam">
-        <div class="container center">
-          <h2>Please join us at <i>Heritage Barn in Hamilton, N.Y.</i> on <i>August 28th, 2027</i> as we celebrate a love story more than ten years in the making.</h2>
+      <section class="block foreword bg-foam">
+        <div class="container flex flex-col center">
+          <p class="font-larken type-heading">Please join us at <i>Heritage Barn in Hamilton, N.Y.</i> on <i>August 28th, 2027</i> as we celebrate a love story more than ten years in the making.</p>
           <p><a href="#">Our Story &rarr;</a></p>
         </div>
       </section>
-      <section class="block hub">
-        <div class="container">
-          <a href="#" class="flex flex-col md-flex-row center reverse" role="button" tabindex="0">
-            <div id="title">
-              <h2 class="type-display-lg font-jost">Details</h2>
-            </div>
-            <div id="description">
-              <h3>Heritage Barn<br>1623 Poolville Road, Hamilton</h3>
+      <section class="block manifest" data-layout="display">
+        <div class="container flex flex-col center">
+          <a href="#" class="row" data-show-details="true" data-direction="reverse">
+            <p class="row-title span-all md-span-third">Details</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Heritage Barn<br>1623 Poolville Road, Hamilton</p>
             </div>
           </a>
-          <a href="#" class="flex flex-col md-flex-row center travel" role="button" tabindex="0">
-            <div id="title">
-              <h2 class="type-display-lg font-jost">Travel & Stay</h2>
+          <a href="#" class="row" data-show-details="false" data-direction="normal">
+            <p class="row-title span-all md-span-third">Travel & Stay</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Hamilton, N.Y.</p>
             </div>
           </a>
-          <a href="#" class="flex flex-col md-flex-row center" role="button" tabindex="0">
-            <div id="title">
-              <h2 class="type-display-lg font-jost">RSVP</h2>
-            </div>
-            <div id="description">
-              <h3>August 28, 2027<br>3:00&ndash;11:00 P.M.</h3>
+          <a href="#" class="row" data-show-details="true" data-direction="normal">
+            <p class="row-title span-all md-span-third">RSVP</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">August 28, 2027<br>3:00&ndash;11:00 P.M.</p>
             </div>
           </a>
-          <a href="https://www.myregistry.com/giftlist/joeyandmegan2027" target="_blank" class="flex flex-col md-flex-row center reverse" role="button" tabindex="0">
-            <div id="title">
-              <h2 class="type-display-lg font-jost">Registry</h2>
-            </div>
-            <div id="description">
-              <h3>Courtesy of<br>MyRegistry</h3>
+          <a href="https://www.myregistry.com/giftlist/joeyandmegan2027" target="_blank" class="row" data-show-details="true" data-direction="reverse">
+            <p class="row-title span-all md-span-third">Registry</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Courtesy of<br>MyRegistry.com</p>
             </div>
           </a>
           <img src="./assets/logos/JM_Label_Rings_Coffee.svg" id="hub-rings" alt="Small J+M label logomark, with an intertwined ring graphic in the center.">
         </div>
       </section>
-      <section class="feature">
-        <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image at 4:3 aspect ratio.">
+      <section class="block feature">
+        <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image.">
       </section>
-      <section class="block">
-        <div class="container grid timeline-cell">
-          <div class="span-all md-span-6 cell-feature">
-            <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image in 4:3 aspect ratio, conformed to 4:5.">
-          </div>
-          <div class="span-all md-span-1"></div>
-          <div class="span-all md-span-5 prose">
+      <section class="block timeline">
+        <div class="container">
+          <article class="grid row" data-direction="normal">
+            <div class="image-feature span-all md-span-6">
+              <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image.">
+            </div>
+            <div class="span-all md-span-1"></div>
+            <div class="span-all md-span-5 prose">
             <h3>Our engagement photos are here, <i>and we love them.</i></h3>
             <p>Partnering with our dear friend, Shane Johnson, we explored Cazenovia’s Lorenzo State Historic Site and the surrounding grounds in beautiful, autumnal October, and he snapped some film. We’re so pleased with his captures, and are happy to share them here.</p>
             <p><a href="#">See the Gallery &rarr;</a></p>
-          </div>
+            </div>
+          </article>
         </div>
       </section>
+    </main>
+    <footer class="block footer bg-emerald" data-layout="normal" data-show-pre-footer="true">
       <a class="pre-footer bg-olive" href="#">
         <div class="container">
           <span class="pre-footer-text"><i>Don't forget to</i> RSVP</span>
@@ -126,8 +125,6 @@
           </div>
         </div>
       </a>
-    </main>
-    <footer class="block bg-emerald">
       <div class="container flex flex-col center">
         <img src="./assets/logos/JM_Primary_Sage.svg" alt="Joey and Megan, Ten Years in The Making." id="footer-logo-primary">
         <p>WEBSITE MADE BY THE GROOM<br><i>(and approved by the bride!)</i><br><br>#JoeyAndMegan2027</p>

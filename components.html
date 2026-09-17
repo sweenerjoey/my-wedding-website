@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components Database &mdash; JS & ML</title>
+
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.svg">
+    <link rel="stylesheet" href="https://use.typekit.net/adp2pli.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css" type="text/css">
+    
+    <link href="styles/normalize.css" rel="stylesheet">
+    <link href="styles/skeleton.css" rel="stylesheet">
+    <link href="styles/theme.css" rel="stylesheet">
+
+    <link href="styles/navigation.css" rel="stylesheet">
+    <script src="styles/navigation.js"></script>
+    
+    <script src="styles/countdown.js"></script>
+  </head>
+  <body>
+    <main>
+      <header id="main-nav" class>
+        <div class="site-header">
+          <input id="site-menu" type="checkbox">
+          <label for="site-menu" class="site-header-btn"><i class="ph-light ph-list" style="font-size: var(--font-size-24);"></i><span class="site-header-btn-text"> Menu</span><span class="site-header-btn-exit"><i class="ph-light ph-x" style="font-size: var(--font-size-24);"></i></span></label>
+          <a href="index.html" class="nav-logo" tabindex="-1">
+            <img src="./assets/logos/JM_Monogram_Eggshell.svg" alt="Joey and Megan wedding monogram mark" loading="lazy">
+          </a>
+          <a href="#" class="site-header-btn">RSVP</a>
+          <div class="site-menu bg-olive">
+            <div class="left">
+              <nav class="site-menu-nav">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#">Our Story</a></li>
+                  <li><a href="#">Details</a></li>
+                  <li><a href="#">Travel & Stay</a></li>
+                  <li><a href="#">RSVP <i class="ph-light ph-arrow-up-right"></i></a></li>
+                  <li><a href="https://www.myregistry.com/giftlist/joeyandmegan2027" target="_blank">Registry <i class="ph-light ph-arrow-up-right"></i></a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="right">
+              <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image.">
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="block hero overlay-30" data-layout="normal">
+        <div class="container flex flex-col center">
+          <h1>H1 Hero Block</h1>
+          <p class="narrow">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+        </div>
+        <div class="scroll type-label">
+          <div class="scroll-text">Scroll</div>
+          <div class="scroll-animation"></div>
+        </div>
+        <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image." class="wallpaper">
+      </section>
+      <section class="block foreword bg-foam">
+        <div class="container flex flex-col center">
+          <p class="font-larken type-heading"><i>The Foreword block</i> appears at the beginning of a page or a story. It uses large, center-aligned typography in a blockquote-like style for an eye-grabbing opener. Utility classes like <span class="font-jost">.narrow</span> or <span class="font-jost">.bg-*</span>add further finesse.</p>
+          <p><a href="#">Underline Link Jost 500 Medium All-Caps &rarr;</a></p>
+        </div>
+      </section>
+      <section class="block feature">
+        <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image at 4:3 aspect ratio.">
+      </section>
+      <section class="block manifest" data-layout="normal">
+        <div class="container flex flex-col">
+          <h2><i>The Manifest Block</i> comes in two styles...</h2>
+          <p class="pill bg-sage type-label">01 &mdash; Normal</p>
+          <div class="row" data-show-details="true" data-direction="normal">
+            <p class="row-title span-all md-span-third">Row Title Sunday, Month Day</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Entry Title Lorem Ipsum</p>
+              <p class="type-body">Small body copy description — Lorem Ipsum Dolor Set</p>
+            </div>
+          </div>
+          <div class="row" data-show-details="true" data-direction="normal">
+            <p class="row-title span-all md-span-third">Row Title Sunday, Month Day</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Entry Title Lorem Ipsum</p>
+              <p class="type-body">Small body copy description — Lorem Ipsum Dolor Set</p>
+            </div>
+          </div>
+          <div class="row" data-show-details="true" data-direction="normal">
+            <p class="row-title span-all md-span-third">Row Title Sunday, Month Day</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Entry Title Lorem Ipsum</p>
+              <p class="type-body">Small body copy description — Lorem Ipsum Dolor Set</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="block manifest" data-layout="normal">
+        <div class="container flex flex-col">
+          <p class="pill bg-sage type-label">01 &mdash; Normal &mdash; As Links</p>
+          <a href="#" class="row" data-show-details="true" data-direction="normal">
+            <p class="row-title span-all md-span-third">Row Title Sunday, Month Day</p>
+            <div class="row-details span-3 md-span-two-third">
+              <p class="type-heading-sm font-larken">Entry Title Lorem Ipsum</p>
+              <p class="type-body">Small body copy description — Lorem Ipsum Dolor Set</p>
+            </div>
+          </a>
+          <a href="#" class="row" data-show-details="true" data-direction="normal">
+            <p class="row-title span-all md-span-third">Row Title Sunday, Month Day</p>
+            <div class="row-details span-3 md-span-two-third">
+              <p class="type-heading-sm font-larken">Entry Title Lorem Ipsum</p>
+              <p class="type-body">Small body copy description — Lorem Ipsum Dolor Set</p>
+            </div>
+          </a>
+          <a href="#" class="row" data-show-details="true" data-direction="normal">
+            <p class="row-title span-all md-span-third">Row Title Sunday, Month Day</p>
+            <div class="row-details span-3 md-span-two-third">
+              <p class="type-heading-sm font-larken">Entry Title Lorem Ipsum</p>
+              <p class="type-body">Small body copy description — Lorem Ipsum Dolor Set</p>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section class="block manifest" data-layout="display">
+        <div class="container flex flex-col">
+          <p class="pill bg-lavender type-label">02 &mdash; Display</p>
+          <a href="#" class="row" data-show-details="true" data-direction="reverse">
+            <p class="row-title span-all md-span-third">Details</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Heritage Barn<br>1623 Poolville Road, Hamilton</p>
+            </div>
+          </a>
+          <a href="#" class="row" data-show-details="false" data-direction="normal">
+            <p class="row-title span-all md-span-third">Travel & Stay</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Hamilton, N.Y.</p>
+            </div>
+          </a>
+          <a href="#" class="row" data-show-details="true" data-direction="normal">
+            <p class="row-title span-all md-span-third">RSVP</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">August 28, 2027<br>3:00&ndash;11:00 P.M.</p>
+            </div>
+          </a>
+          <a href="#" class="row" data-show-details="true" data-direction="reverse">
+            <p class="row-title span-all md-span-third">Registry</p>
+            <div class="row-details span-all md-span-two-third">
+              <p class="type-heading-sm font-larken">Courtesy of<br>MyRegistry.com</p>
+            </div>
+          </a>
+        </div>
+      </section>
+      <section class="block timeline">
+        <div class="container">
+          <hgroup class="center">
+            <p class="type-label">The Story So Far</p>
+            <h2>The Threads of Time</h2>
+          </hgroup>
+          <article class="grid row" data-direction="normal">
+            <div class="image-feature span-all md-span-6">
+              <div class="details">
+                <h2 class="type-title">The Farmhouse</h2>
+                <span class="pill bg-olive type-label-sm">Sleeps 10</span>
+              </div>
+              <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image.">
+            </div>
+            <div class="span-all md-span-1"></div>
+            <div class="span-all md-span-5 prose center">
+              <p class="type-label">2016</p>
+              <h3>H3 Humble Beginnings</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.</p>
+            </div>
+          </article>
+          <article class="grid row" data-direction="reverse">
+            <div class="image-feature span-all md-span-6">
+              <div class="details">
+                <h2 class="type-title">The Hop House</h2>
+                <span class="pill bg-olive type-label-sm">Sleeps 9</span>
+              </div>
+              <img src="./assets/placeholder-landscape-4-3.jpg" alt="Placeholder image.">
+            </div>
+            <div class="span-all md-span-1"></div>
+            <div class="span-all md-span-5 prose center">
+              <p class="type-label">2017</p>
+              <h3>H3 Another Entry</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="block accordion">
+        <div class="container flex flex-col">
+          <details open>
+            <summary class="accordion-header type-heading-sm"><i>The Fine Print</i></summary>
+            <div class="row grid">
+              <p class="row-title span-all md-span-third type-label">Row Title</p>
+              <div class="row-details span-all md-span-two-third">
+                <p class="type-body">Row content lorem ipsum dolor set amet. We ship small packages in eco-friendly packaging without plastic. We are working on finding eco-friendly alternatives for shipping our oversized packages, which typically still contain some plastic.</p>
+              </div>
+            </div>
+            <div class="row grid">
+              <p class="span-all md-span-third type-label">Row Title</p>
+              <div class="span-all md-span-two-third">
+                <p class="type-body">Row content lorem ipsum dolor set amet. We ship small packages in eco-friendly packaging without plastic. We are working on finding eco-friendly alternatives for shipping our oversized packages, which typically still contain some plastic.</p>
+              </div>
+            </div>
+            <div class="row grid">
+              <p class="span-all md-span-third type-label">Row Title</p>
+              <div class="span-all md-span-two-third">
+                <p class="type-body">Row content lorem ipsum dolor set amet. We ship small packages in eco-friendly packaging without plastic. We are working on finding eco-friendly alternatives for shipping our oversized packages, which typically still contain some plastic.</p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="block footer bg-emerald" data-layout="normal" data-show-pre-footer="true">
+      <a class="pre-footer bg-olive" href="#">
+        <div class="container">
+          <span class="pre-footer-text"><i>Don't forget to</i> RSVP</span>
+          <div class="pre-footer-arrow">
+            <i class="ph-light ph-caret-right"></i>
+            <i class="ph-light ph-caret-right"></i>
+          </div>
+        </div>
+      </a>
+      <div class="container flex flex-col center">
+        <img src="./assets/logos/JM_Primary_Sage.svg" alt="Joey and Megan, Ten Years in The Making." id="footer-logo-primary">
+        <p>WEBSITE MADE BY THE GROOM<br><i>(and approved by the bride!)</i><br><br>#JoeyAndMegan2027</p>
+        <p class="type-body-sm narrow">Argenteuil by Claude Monet, c. 1872;<br>Courtesy National Gallery of Art, Washington.</p>
+      </div>
+    </footer>
+    <section class="block countdown bg-monet-argenteuil">
+      <div class="container">
+        <div id="countdown">
+          <ul>
+            <li class="type-heading-sm font-larken"><span class="type-display-sm font-jost" id="days"></span>Days</li>
+            <li class="type-heading-sm font-larken"><span class="type-display-sm font-jost" id="hours"></span>Hours</li>
+            <li class="type-heading-sm font-larken"><span class="type-display-sm font-jost" id="minutes"></span>Minutes</li>
+            <li class="type-heading-sm font-larken"><span class="type-display-sm font-jost" id="seconds"></span>Seconds</li>
+          </ul>
+        </div>
+        <div id="content" style="display: none;">
+          <h3>Thank you for celebrating our special day with us.<br>Check back soon for our gallery of wedding photos.</h3>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
