@@ -498,7 +498,7 @@ h1 {
     padding: var(--spacing-200);
 
     @media ( min-width: 48rem ) {
-        width: 33%;
+        max-width: 33%;
     }
 }
 .block.feature[data-details-position="tl"] .details {
