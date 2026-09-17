@@ -478,9 +478,12 @@ h1 {
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: var(--flex-gap);
     color: var(--color-eggshell);
     padding: var(--spacing-200);
+
+    @media ( min-width: 48rem ) {
+        width: 33%;
+    }
 }
 .block.feature[data-details-position="tl"] .details {
     top: 0;
