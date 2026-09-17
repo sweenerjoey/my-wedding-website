@@ -463,16 +463,32 @@ h1 {
     height: 100%;
 }
 .block.feature[data-details-position="tl"]:has(.details):before {
-    background: linear-gradient(to right bottom, var(--color-black-overlay-20), transparent 50%);
+    background: linear-gradient(to bottom, var(--color-black-overlay-20), transparent 50%);
+
+    @media ( min-width: 48rem ) {
+        background: linear-gradient(to right bottom, var(--color-black-overlay-20), transparent 50%);
+    }
 }
 .block.feature[data-details-position="tr"]:has(.details):before {
-    background: linear-gradient(to left bottom, var(--color-black-overlay-20), transparent 50%);
+    background: linear-gradient(to bottom, var(--color-black-overlay-20), transparent 50%);
+
+    @media ( min-width: 48rem ) {
+        background: linear-gradient(to left bottom, var(--color-black-overlay-20), transparent 50%);
+    }
 }
 .block.feature[data-details-position="bl"]:has(.details):before {
-    background: linear-gradient(to right top, var(--color-black-overlay-20), transparent 50%);
+    background: linear-gradient(to top, var(--color-black-overlay-20), transparent 50%);
+
+    @media ( min-width: 48rem ) {
+        background: linear-gradient(to right top, var(--color-black-overlay-20), transparent 50%);
+    }
 }
 .block.feature[data-details-position="br"]:has(.details):before {
-    background: linear-gradient(to left top, var(--color-black-overlay-20), transparent 50%);
+    background: linear-gradient(to top, var(--color-black-overlay-20), transparent 50%);
+
+    @media ( min-width: 48rem ) {
+        background: linear-gradient(to left top, var(--color-black-overlay-20), transparent 50%);
+    }
 }
 .block.feature .details {
     position: absolute;
