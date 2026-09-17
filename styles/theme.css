@@ -673,13 +673,14 @@ h1 {
     border-bottom: 1px solid rgb(from currentColor r g b / 0.5);
 }
 .block.accordion details > summary {
+    list-style: none;
     font-family: var(--font-larken);
     letter-spacing: var(--letter-spacing-tight);
     font-style: italic;
     position: relative;
 }
-.block.accordion details > summary::marker {
-    content: '';
+summary::-webkit-details-marker {
+    display: none;
 }
 .block.accordion details > summary:after {
     content: '\002B';
