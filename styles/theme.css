@@ -153,6 +153,7 @@ h1 {
     font-family: var(--font-public-sans);
     font-size: var(--font-size-16);
     letter-spacing: normal;
+    font-weight: 400;
 }
 .type-title-sm {
     font-family: var(--font-jost);
@@ -258,6 +259,10 @@ h1 {
     background-color: var(--color-eggshell);
     color: var(--color-coffee);
  }
+ .bg-black {
+    background-color: var(--color-black);
+    color: var(--color-eggshell);
+ }
 /* 
  *
  *
@@ -323,13 +328,11 @@ h1 {
  *
  *
  */
-.block.hero[data-layout="normal"], .block.hero[data-layout="home"], .block.hero[data-layout="text-only"] {
+.block.hero {
     display: flex;
     flex-direction: column;
     position: relative;
-    text-align: center;
     justify-content: center;
-    align-items: center;
     min-height: 100vmin;
     width: 100%;
 
@@ -337,6 +340,10 @@ h1 {
         min-height: unset;
         height: 100vmin;
     }
+}
+.block.hero > .container {
+    text-align: center;
+    align-items: center;
 }
 .block.hero[data-layout="home"] {
     min-height: 100vh;
@@ -428,7 +435,7 @@ h1 {
 /* 
  *
  *
- * BLOCK: FEATURE //////// Full-width image, graphic or video. Constrains to a certain aspect ratio until larger breakpoints.
+ * BLOCK: FEATURE //////// Full-width image, graphic or video. Constrains to a certain aspect ratio until larger breakpoints. Details can be added and placed using custom data.
  *
  *
  */
@@ -438,7 +445,7 @@ h1 {
     aspect-ratio: 4/5;
     width: 100%;
     height: 100%;
-    margin-bottom: -4px;
+    line-height: 0;
 
     @media ( min-width: 48rem ) /* Tablet 768 */ {
         aspect-ratio: unset;
@@ -449,6 +456,48 @@ h1 {
     height: 100%;
     object-fit: cover;
 }
+.block.feature:has(.details):before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.block.feature[data-details-position="tl"]:has(.details):before {
+    background: linear-gradient(to right bottom, var(--color-black-overlay-20), transparent 50%);
+}
+.block.feature[data-details-position="tr"]:has(.details):before {
+    background: linear-gradient(to left bottom, var(--color-black-overlay-20), transparent 50%);
+}
+.block.feature[data-details-position="bl"]:has(.details):before {
+    background: linear-gradient(to right top, var(--color-black-overlay-20), transparent 50%);
+}
+.block.feature[data-details-position="br"]:has(.details):before {
+    background: linear-gradient(to left top, var(--color-black-overlay-20), transparent 50%);
+}
+.block.feature .details {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: var(--flex-gap);
+    color: var(--color-eggshell);
+    padding: var(--spacing-200);
+}
+.block.feature[data-details-position="tl"] .details {
+    top: 0;
+    left: 0;
+}
+.block.feature[data-details-position="tr"] .details {
+    top: 0;
+    right: 0;
+}
+.block.feature[data-details-position="bl"] .details {
+    bottom: 0;
+    left: 0;
+}
+.block.feature[data-details-position="br"] .details {
+    bottom: 0;
+    right: 0;
+}
 /* 
  *
  *
@@ -457,8 +506,13 @@ h1 {
  *
  */
 .block.manifest[data-layout="normal"], .block.manifest[data-layout="display"] {
-    padding-top: var(--spacing-800);
-    padding-bottom: var(--spacing-800);
+    padding-top: var(--spacing-600);
+    padding-bottom: var(--spacing-600);
+
+    @media ( min-width: 48rem ) {
+        padding-top: var(--spacing-800);
+        padding-bottom: var(--spacing-800);
+    }
  }
 .block.manifest[data-layout="normal"] .row {
     display: grid;
