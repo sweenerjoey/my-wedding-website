@@ -5,7 +5,7 @@
     --content-narrow-width: 540px;
 
     --color-eggshell: #eeeeee;
-    --color-sunflower: #fac526;
+    --color-sunflower: #F5A73D;
     --color-vermilion: #e82356;
     --color-foam: #e5dccb;
     --color-crema: #994400;
@@ -212,6 +212,15 @@ h1 {
  *
  *
  */
+.bg-vermilion, .bg-red {
+    background-color: var(--color-vermilion);
+    color: var(--color-black);
+}
+.bg-sunflower, .bg-yellow {
+    background-color: var(--color-sunflower);
+    color: var(--color-black);
+}
+
  .bg-sage {
     background-color: var(--color-sage);
     color: var(--color-emerald);
@@ -564,6 +573,10 @@ h1 {
     bottom: calc(50% - var(--spacing-100));
     font-size: var(--font-size-24);
     font-weight: 100;
+    transition: all 0.3s ease;
+ }
+ .block.manifest[data-layout="normal"] .row:is(a):hover:after {
+    right: 1%;
  }
 .block.manifest[data-layout="normal"] .row:is(a):first-child {
     padding-top: var(--spacing-200);
