@@ -119,6 +119,7 @@ h1 {
 .font-larken {
     font-family: var(--font-larken);
     letter-spacing: var(--letter-spacing-tight);
+    font-size-adjust: 0.47;
 }
 /* 
  * 
@@ -626,6 +627,7 @@ h1 {
     line-height: var(--line-height-80);
     letter-spacing: var(--letter-spacing-tight);
     text-transform: uppercase;
+    font-size-adjust: none;
 
     @media ( min-width: 64rem ) {
         font-size: var(--font-size-144);
@@ -638,7 +640,7 @@ h1 {
     font-family: var(--font-larken);
     text-transform: none;
     font-style: italic;
-    transform: scale(0.95);
+    font-size-adjust: 0.47;
  }
 .block.manifest[data-layout="display"] .row .row-details {
     text-transform: none;
