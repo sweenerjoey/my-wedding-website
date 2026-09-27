@@ -5,7 +5,6 @@ Back when fonts were physical pieces of moveable cut-metal letterpunches, font f
 ## Traditional Typographic Scale
 | Name                | pt   | rem   |
 | :------------------ | ---: | ----: |
-| Minion              | 7    | 0.583 |
 | Bourgeois           | 9    | 0.75  |
 | Long Primer         | 10   | 0.833 |
 | Small Pica          | 11   | 0.917 |
@@ -18,15 +17,12 @@ Back when fonts were physical pieces of moveable cut-metal letterpunches, font f
 | Double Great Primer | 36   | 3     |
 | Canon               | 48   | 4     |
 | Double Canon        | 56   | 4.667 |
-| Six Pica / Inch     | 72   | 6     |
+| Six Pica (Inch)     | 72   | 6     |
 | Eight Pica          | 96   | 8     |
 
 ## CSS Variables
-The below code can be copy-pasted into the `:root` of any theme CSS file to get usable variables for the traditional typographic scale. Note that all of the sizes are determined mathematically, with variable `--base-value` set to a default of 100%. This keeps the relationship between sizes intact even when the base size is changed (either manually in the CSS or automatically due to device zoom settings).
+The below code can be copy-pasted into the `:root` of any theme CSS file to get usable variables for the traditional typographic scale. Note that all of the sizes are determined mathematically, with variable `--base-value` set to a default of 16px. This keeps the relationship between sizes intact even when the base size is changed (either manually in the CSS or automatically due to device zoom settings).
 ```
---base-value: 100%;
-
---pt-minion: calc(var(--base-value) * 0.583);
 --pt-bourgeois: calc(var(--base-value) * 0.75);
 --pt-long-primer: calc(var(--base-value) * 0.833);
 --pt-small-pica: calc(var(--base-value) * 0.917);

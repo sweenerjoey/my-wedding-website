@@ -33,11 +33,11 @@ header .site-header {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: calc(var(--font-size-16) * 0.5);
+    gap: calc(var(--pt-pica) * 0.5);
     width: 5rem;
     height: 5rem;
     font-family: var(--font-jost);
-    font-size: var(--font-size-14);
+    font-size: var(--pt-small-pica);
     line-height: var(--line-height-120);
     font-weight: 500;
     letter-spacing: var(--letter-spacing-loose);
@@ -86,7 +86,7 @@ header .site-header {
     mix-blend-mode: exclusion;
 }
 .nav-logo > img {
-    height: var(--font-size-48);
+    height: var(--pt-double-great-primer);
     padding: 0;
 }
 /* 
@@ -163,7 +163,7 @@ header .site-header {
 }
 .site-menu-nav ul {
     list-style: none;
-    font-size: var(--font-size-24);
+    font-size: var(--pt-great-primer);
     text-align: center;
 }
 .site-menu-nav li, .site-menu-nav a {
