@@ -30,9 +30,9 @@ Taken together, this package of fonts feels exactly like Megan and I: consistent
 
 ### Colors
 
-Reflecting the beauty of upstate New York, with some nods to Monet's paintings in the mix, our identity's color palette features rich earthy tones punctuated by surprisingly vibrant accents.
+Derived from a selection of Monet's paintings and revised to modern standards, our identity's color palette features rich earthy tones punctuated by surprisingly vibrant accents.
 
-The core palette consists of a range of coffee-inspired brown tones, natural greens and floral purples, with a neutral off-white providing warmth and contrast. The twist of the palette, for me, is in the two accent tones — aptly-named "Sunflower" and "Vermilion" — which bring this impact, vibrancy and intrigue and compliment the baseline tones. When these colors mix and combine, I think you can really feel that Impressionist sensibility of light and shadow taking shape.
+The core palette consists of a range of coffee-inspired brown tones, natural greens and floral purples, with a neutral off-white providing warmth and contrast. The twist of the palette, for me, is in the two accent tones—aptly-named "Sunflower" and "Vermilion"—which bring an impact, vibrancy and intrigue to compositions, and beautifully compliment the baseline tones. When these colors mix and combine, you really feel that Impressionist sensibility of light and shadow taking shape.
 
 ### Imagery
 
