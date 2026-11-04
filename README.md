@@ -4,6 +4,8 @@ Welcome to the repository for [joeyandmegan.com](https://www.joeyandmegan.com), 
 
 Keep reading to learn more about the design of the project.
 
+![Joey and Megan monogram seal logo over "The Artist's Garden in Argenteuil (A Corner of the Garden with Dahlias)" by Claude Monet. Painting courtesy National Gallery of Art, Washington.](/assets/git/wedding-git-hero.jpg)
+
 ## Behind the Design
 When most people imagine their wedding, I doubt they're thinking about font choices, logo designs and websites. But for Megan and I—a printmaker-turned-teacher, and a graphic designer with enough front-end knowledge to be dangerous—it's been top-of-mind since before I popped the question. The idea of distilling our life together down to a bunch of design decisions has always struck me as a fun exercise. Doing just that has been surprisingly, deeply rewarding; it's become a new way for us to put our relationship (both where it's been and where it's going) into a new context, and see it in a refreshing new light.
 
@@ -11,7 +13,11 @@ If I had to describe me and Megan, I'd probably use words like "eclectic"... "ou
 
 ### Visual Identity
 
-Our visual identity is deeply informed by the work of Claude Monet and the Impressionists: visible mark-making, preference for open-air compositions and unique viewpoints, depictions of every-day subject matter and how light expressed on the canvas (or the page, or the screen) makes you feel. This, combined with our other shared convictions—a belief in free and open access to information and knowledge; our tendency toward finding the sacred among the mundane; _giving a shit_ about the little parts of life; the at-times _jarring_ juxtaposition of our boisterous personalities with our moodier, more contemplative reflections of ourselves and the world—helped me to arrive at a handful of core principles for the identity:
+Our visual identity is deeply informed by the work of Claude Monet and the Impressionists: visible mark-making, preference for open-air compositions and unique viewpoints, depictions of every-day subject matter and how light expressed on the canvas (or the page, or the screen) makes you feel. 
+
+![Snapshot of the wedding's visual identity.](/assets/git/wedding-visual-identity.png)
+
+This, combined with our other shared convictions—a belief in free and open access to information and knowledge; our tendency toward finding the sacred among the mundane; _giving a shit_ about the little parts of life; the at-times _jarring_ juxtaposition of our boisterous personalities with our moodier, more contemplative reflections of ourselves and the world—helped me to arrive at a handful of core principles for the identity:
 * __It has to be human-made.__ We cherish work done by hand; just as Impressionism is defined by the brushstroke, any rendition of our life and love put to paper needs to feel like it's been crafted by human hands. This can play out literally—handwritten touches, using actual Impressionist paintings in the design—but it can also be taken to a more basal conclusion: the HTML/CSS is written by hand, every piece of design is poured over with the love, respect and care of a curator, etc.
 * __It should feel chic, Bohemian, elegant even. But not stuffy.__ We all know that weddings are about the pomp and circumstance. That doesn't mean it has to be boring, though: the identity can incorporate more eclectic, chic touches without feeling like we should be sitting in church pews. Premium paper stocks, real florals and natural decor root the identity in raw materials; compositions follow an Impressionist ideal of the open air, with lots of negative space and room for elements to breathe; typography is cutting-edge but rooted in a timeless elegance, refactored for a modern wedding; the identity should be fashionable, and not like an expectation.
 * __It has to reflect the natural beauty of upstate New York.__ We were born and raised in upstate New York (although, technically I was born in Vermont? Whatever. Same diff.) Life along Lake Ontario is what we've known for the last decade. Nothing beats a bike ride along the Erie Canal, a long-weekend escape to the ADK, swimming in the St. Lawrence River, or hiking the Chimney Bluffs. Any identity that's a reflection of us has to be a reflection of the environment we've been fortunate enough to thrive in: through color choice, in the rhythm of the design, or in the attitude of the approach.
@@ -31,6 +37,8 @@ Taken together, this package of fonts feels exactly like Megan and I: consistent
 ### Colors
 
 Derived from a selection of Monet's paintings and revised to modern standards, our identity's color palette features rich earthy tones punctuated by surprisingly vibrant accents.
+
+![Colors in the palette were pulled directly from some of our favorite Monet paintings.](/assets/git/wedding-palette-monet-paintings.jpg)
 
 The core palette consists of a range of coffee-inspired brown tones, natural greens and floral purples, with a neutral off-white providing warmth and contrast. The twist of the palette, for me, is in the two accent tones—aptly-named "Sunflower" and "Vermilion"—which bring an impact, vibrancy and intrigue to compositions, and beautifully compliment the baseline tones. When these colors mix and combine, you really feel that Impressionist sensibility of light and shadow taking shape.
 
