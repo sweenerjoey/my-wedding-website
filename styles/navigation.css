@@ -1,6 +1,7 @@
 :root {
     --header-background: linear-gradient(rgb(from var(--color-black) r g b / 0.33) 0%, rgb(from var(--color-black) r g b / 0.0) 100%);
 }
+
 /* 
  *
  *
@@ -19,16 +20,20 @@ header {
     transition: all 0.15s ease-out !important;
     box-shadow: 0 1px 0 0 rgb(from currentColor r g b / 0.2);
 }
-header.scrolled, header.inverted {
+
+header.scrolled,
+header.inverted {
     --header-background: var(--color-eggshell);
     color: var(--color-coffee);
 }
+
 header .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
 }
+
 .site-header-btn {
     display: inline-flex;
     align-items: center;
@@ -45,50 +50,66 @@ header .site-header {
     text-decoration: none !important;
     transition: background-color ease 0.3s !important;
 }
-.site-header-btn:hover, .site-header-btn:active {
+
+.site-header-btn:hover,
+.site-header-btn:active {
     background-color: rgb(from var(--color-black) r g b / 0.08);
 }
+
 .site-header-btn-text {
     display: none;
 }
-@media (min-width: 64rem) /* Laptop 1024 */ {
+
+@media (min-width: 64rem)
+/* Laptop 1024 */
+    {
     .site-header-btn {
         width: 10rem;
     }
+
     .site-header-btn:first-of-type {
         border-right: 1px solid rgb(from currentColor r g b / 0.2);
     }
+
     .site-header-btn:last-of-type {
         border-left: 1px solid rgb(from currentColor r g b / 0.2);
     }
+
     .site-header-btn-text {
         display: unset;
     }
+
     .site-header-btn-contact {
         display: none;
     }
 }
+
 .site-header input[type="checkbox"] {
     opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
-} 
+}
+
 .site-header label:has(+ input[type="checkbox"]:focus-visible) {
     outline: -webkit-focus-ring-color auto 1px;
 }
+
 .site-header label {
     z-index: 20;
     cursor: pointer;
 }
+
 .nav-logo {
     pointer-events: all;
     mix-blend-mode: exclusion;
 }
-.nav-logo > img {
+
+.nav-logo>img {
     height: var(--pt-double-great-primer);
     padding: 0;
 }
+
 /* 
  *
  *
@@ -96,38 +117,30 @@ header .site-header {
  *
  *
  */
-.site-header input[type="checkbox"]:not(:checked) ~ .site-menu {
+.site-header input[type="checkbox"]:not(:checked)~.site-menu {
     clip-path: inset(0 0 100% 0);
 }
-.site-header input[type="checkbox"]:not(:checked) ~ .site-header-btn > .site-header-btn-exit {
+
+.site-header input[type="checkbox"]:not(:checked)~.site-header-btn>.site-header-btn-exit {
     display: none;
 }
-.site-header input[type="checkbox"]:checked ~ .site-header-btn {
+
+.site-header input[type="checkbox"]:checked~.site-header-btn {
     border-color: transparent;
 }
-.site-header input[type="checkbox"]:checked ~ .site-header-btn > .site-header-btn-text, .site-header input[type="checkbox"]:checked ~ .site-header-btn > i:first-child {
+
+.site-header input[type="checkbox"]:checked~.site-header-btn>.site-header-btn-text,
+.site-header input[type="checkbox"]:checked~.site-header-btn>i:first-child {
     display: none;
 }
-.site-header:has(div.bg-vermilion) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-red) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-sunflower) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-yellow) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-sage) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-foam) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-crema) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-lavender) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-eggshell) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-white) input[type="checkbox"]:checked ~ label {
+
+.site-header:has(div:is(.bg-white, .bg-eggshell, .bg-vermilion, .bg-red, .bg-sunflower, .bg-yellow, .bg-sage, .bg-foam, .bg-crema, .bg-lavender)) input[type="checkbox"]:checked~label {
     color: var(--color-black);
 }
-.site-header:has(div.bg-olive) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-emerald) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-coffee) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-amethyst) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-grape) input[type="checkbox"]:checked ~ label,
-.site-header:has(div.bg-black) input[type="checkbox"]:checked ~ label {
+.site-header:has(div:is(.bg-black, .bg-olive, .bg-emerald, .bg-coffee, .bg-amethyst, .bg-grape)) input[type="checkbox"]:checked~label {
     color: var(--color-eggshell);
 }
+
 .site-menu {
     z-index: 10;
     display: flex;
@@ -140,8 +153,9 @@ header .site-header {
     width: 100%;
     height: 100%;
     clip-path: inset(0 0 0 0);
-    transition: clip-path 0.5s cubic-bezier(0.7,0.01,0.2,0.99);
+    transition: clip-path 0.5s cubic-bezier(0.7, 0.01, 0.2, 0.99);
 }
+
 .site-menu .left {
     flex: 1;
     display: flex;
@@ -149,25 +163,33 @@ header .site-header {
     width: 100%;
     overflow-y: auto;
 }
+
 .site-menu .right {
-    display: none;
+    width: 100%;
+    height: 30%;
 }
+
 .site-menu .right img {
     padding: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-@media ( min-width: 64rem ) /* Laptop 1024 */ {
+
+@media (min-width: 64rem)
+/* Laptop 1024 */
+    {
     .site-menu {
         flex-direction: row;
     }
+
     .site-menu .right {
         display: unset;
         width: 50%;
         height: 100%;
     }
 }
+
 .site-menu-nav {
     flex: 1;
     display: flex;
@@ -175,20 +197,25 @@ header .site-header {
     align-items: center;
     padding: var(--spacing-600) 0 var(--spacing-200);
 }
+
 .site-menu-nav:has(a:hover) a:not(:hover) {
     opacity: 0.33;
 }
+
 .site-menu-nav ul {
     list-style: none;
     font-size: var(--pt-great-primer);
     text-align: center;
 }
-.site-menu-nav li, .site-menu-nav a {
+
+.site-menu-nav li,
+.site-menu-nav a {
     font-size: unset;
     font-weight: unset;
     padding: var(--spacing-100) 0;
     text-decoration: none;
 }
+
 .active {
     text-decoration: underline !important;
     text-decoration-thickness: 1px !important;

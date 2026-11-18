@@ -56,7 +56,7 @@
 
 ::selection {
     color: var(--color-eggshell);
-    background: var(--color-black);
+    background: rgb(from var(--color-black) r g b / 0.85);
 }
 
 body {
