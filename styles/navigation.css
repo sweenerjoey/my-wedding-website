@@ -108,7 +108,24 @@ header .site-header {
 .site-header input[type="checkbox"]:checked ~ .site-header-btn > .site-header-btn-text, .site-header input[type="checkbox"]:checked ~ .site-header-btn > i:first-child {
     display: none;
 }
-.site-header input[type="checkbox"]:checked ~ label {
+.site-header:has(div.bg-vermilion) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-red) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-sunflower) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-yellow) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-sage) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-foam) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-crema) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-lavender) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-eggshell) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-white) input[type="checkbox"]:checked ~ label {
+    color: var(--color-black);
+}
+.site-header:has(div.bg-olive) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-emerald) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-coffee) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-amethyst) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-grape) input[type="checkbox"]:checked ~ label,
+.site-header:has(div.bg-black) input[type="checkbox"]:checked ~ label {
     color: var(--color-eggshell);
 }
 .site-menu {
